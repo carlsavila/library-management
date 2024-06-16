@@ -10,8 +10,8 @@
     padding: 10px;
 
     .logo {
-        width: 5rem;
-        border: .1px solid saddlebrown;
+        width: 4rem;
+        border: .1px solid #333;
         border-radius: 1rem;
         padding: .1rem;
     }
@@ -20,4 +20,52 @@
         display: inherit;
         gap: 20px;
     }
+
+    .container {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 2px;
+        background-color: #333;
+        margin: 10px 0;
+        transition: 0.4s;
+    }
+
+    .container:hover {
+        .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+        .bar2 {
+            opacity: 0;
+        }
+        .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .rlink{
+        display: none;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      
+      h2 {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      
+      h3 {
+        font-size: .5rem;
+        font-weight: 600;
+      }
 }
