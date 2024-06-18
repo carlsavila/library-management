@@ -6,7 +6,7 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
-import { MenuComponent } from './pages/menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 export const routes: Routes = [
   {    path: 'home',    component: HomeComponent,  },
