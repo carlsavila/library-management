@@ -59,14 +59,17 @@
         display: inherit;
     }
 
-
+    .head1-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
       
-      h2 {
+    .head2-title, h2 {
         font-size: 1rem;
         font-weight: 600;
       }
       
-      h3 {
+    .head3-title ,h3 {
         font-size: .5rem;
         font-weight: 600;
       }
