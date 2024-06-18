@@ -1,0 +1,79 @@
+
+button [submit]:disabled,
+button[disabled] {
+    color: var(--bnt-dbled-color);
+    background-color: var(--bnt-dbled-bg-color);
+}
+
+button[type="submit"]:enabled {
+    color: var(--bnt-ebled-color);
+    background-color: var(--bnt-ebled-bg-color);
+}
+
+.msgColorAlert {
+    color: var(--msgColorAlert);
+    font-style: italic;
+}
+
+.msgColorValid {
+    color: var(--msgColorValid);
+    font-style: italic;
+}
+
+form {
+    max-width: 30rem;
+    margin: 0 auto;
+
+    fieldset,
+    input,
+    label,
+    button {
+        margin: .5rem;
+        padding: .2rem;
+        border: var(--form_boder);
+        font-family: inherit;
+    }
+
+    fieldset {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 20rem;
+
+        input,
+        label {
+            width: 15rem;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    form {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        fieldset {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 15rem;
+    
+            input,
+            label {
+                width: 13rem;
+            }
+    }
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+
+    form {
+        fieldset {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
