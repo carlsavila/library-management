@@ -19,6 +19,8 @@
     .menuItems {
         display: inherit;
         gap: 20px;
+        justify-content: center;
+        align-items: center;
     }
 
     .container {
@@ -52,6 +54,9 @@
 @media only screen and (max-width: 600px) {
     .rlink{
         display: none;
+    }
+    .mobil {
+        display: inherit;
     }
 
     h1 {
