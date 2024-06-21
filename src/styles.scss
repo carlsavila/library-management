@@ -110,12 +110,12 @@ h3 {
   --kittenCard-pem: rgb(176, 45, 73);
 
   // Borders to  DEBUG /
-  --body-sections: 3px dotted red;
-  --grid-areas: 5px dotted green;
-  --main-grid-areas-items: 3px dotted blue;
-  --main-grid-areas-items-container: 3px dotted orangered;
-  --main-grid-areas-items-cards-container: 3px dotted grey;
-  --main-grid-areas-items-container-hover: 5px dotted rgb(169, 237, 177);
+  --body-sections: .1px dotted #ccc; //red;
+  --grid-areas: .1px dotted #ccc; //green;
+  --main-grid-areas-items: .1px dotted #ccc; //blue;
+  --main-grid-areas-items-container: .1px dotted #ccc; //orangered;
+  --main-grid-areas-items-cards-container: .1px dotted #ccc; //grey;
+  --main-grid-areas-items-container-hover: .1px dotted #ccc; //rgb(169, 237, 177);
 
   --header-border: var(--body-sections);
   --main-grid-container-border: var(--body-sections);

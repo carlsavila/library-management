@@ -1,3 +1,4 @@
+/* 
 header,
 main,
 footer {
@@ -6,7 +7,7 @@ footer {
     border: 2px solid crimson;
 }
 
-/* Header section */
+// Header section //
 header app-menu {
     display: flex;
     flex-direction: row;
@@ -17,7 +18,7 @@ header app-menu {
     border: 3px solid rgb(77, 220, 20);
 }
 
-/* Footer section */
+// Footer section //
 main {
     display: flex;
     flex-direction: column;
@@ -26,7 +27,7 @@ main {
     //height: calc(100vh - 10vh - 12vh);
 }
 
-/* Footer section */
+// Footer section //
 footer {
     display: flex;
     flex-direction: column;
@@ -66,7 +67,7 @@ footer {
     max-width: 600px;
 }
 
-/* Header section */
+// Header section //
 header app-menu {
     display: flex;
     flex-direction: column;
@@ -75,7 +76,7 @@ header app-menu {
     min-height: 10vh;
 }
 
-/* Footer section */
+// Footer section //
 main {
     display: flex;
     flex-direction: column;
@@ -84,7 +85,7 @@ main {
     //height: calc(100vh - 10vh - 10vh);
 }
 
-/* Footer section */
+// Footer section //
 footer {
     display: flex;
     flex-direction: column;
@@ -102,4 +103,5 @@ footer {
     }
 }
 
-}
+} 
+*/
