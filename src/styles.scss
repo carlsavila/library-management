@@ -81,605 +81,635 @@ h3 {
 */
 
 :root {
-  // styles /
-  --global-font: "Open Sans";
-  --body-bg: rgb(253, 245, 230);
-  --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
-  --body-HeaderMainFooter-bg: oldlace;
-  --h1h2-color: rgb(92, 190, 6);
-  --h3h4-color: rgb(76, 157, 4);
-  --dfn-color: rgb(82, 88, 77);
+    // styles /
+    --global-font: "Open Sans";
+    --body-bg: rgb(253, 245, 230);
+    --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+    --body-HeaderMainFooter-bg: oldlace;
+    --h1h2-color: rgb(92, 190, 6);
+    --h3h4-color: rgb(76, 157, 4);
+    --dfn-color: rgb(82, 88, 77);
 
-  // List cards container/
-  --list-CardsContainer-bg-color: rgb(253, 245, 230);
-  --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // List cards container/
+    --list-CardsContainer-bg-color: rgb(253, 245, 230);
+    --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  // Form /
-  --form_boder: 1px solid #ccc;
-  // form-kitten /
-  --bnt-dbled-color: grey;
-  --bnt-dbled-bg-color: antiquewhite;
-  --bnt-ebled-color: antiquewhite;
-  --bnt-ebled-bg-color: green;
-  // Alertes /
-  --msgColorAlert: orange;
-  --msgColorValid: green;
+    // Form /
+    --form_boder: 1px solid #ccc;
+    // form-kitten /
+    --bnt-dbled-color: grey;
+    --bnt-dbled-bg-color: antiquewhite;
+    --bnt-ebled-color: antiquewhite;
+    --bnt-ebled-bg-color: green;
+    // Alertes /
+    --msgColorAlert: orange;
+    --msgColorValid: green;
 
-  // KittenCard /
-  --kittenCard_bx-shdow: 2px 2px 50px 10px rgb(245, 236, 161);
-  --kittenCard-pem: rgb(176, 45, 73);
+    // KittenCard /
+    --kittenCard_bx-shdow: 2px 2px 50px 10px rgb(245, 236, 161);
+    --kittenCard-pem: rgb(176, 45, 73);
 
-  // Borders to  DEBUG /
-  --body-sections: .1px dotted #ccc; //red;
-  --grid-areas: .1px dotted #ccc; //green;
-  --main-grid-areas-items: .1px dotted #ccc; //blue;
-  --main-grid-areas-items-container: .1px dotted #ccc; //orangered;
-  --main-grid-areas-items-cards-container: .1px dotted #ccc; //grey;
-  --main-grid-areas-items-container-hover: .1px dotted #ccc; //rgb(169, 237, 177);
+    // Borders to  DEBUG /
+    --body-sections: .1px dotted #ccc; //red;
+    --grid-areas: .1px dotted #ccc; //green;
+    --main-grid-areas-items: .1px dotted #ccc; //blue;
+    --main-grid-areas-items-container: .1px dotted #ccc; //orangered;
+    --main-grid-areas-items-cards-container: .1px dotted #ccc; //grey;
+    --main-grid-areas-items-container-hover: .1px dotted #ccc; //rgb(169, 237, 177);
 
-  --header-border: var(--body-sections);
-  --main-grid-container-border: var(--body-sections);
-  --grid-itemList: var(--grid-areas);
-  --grid-itemList-CardsContainer-boder: var(--main-grid-areas-items);
-  --grid-itemList-CardContainer: var(--main-grid-areas-items-container);
-  --grid-itemList-CardContainer-hover: var(--main-grid-areas-items-container-hover);
-  --grid-itemUser: var(--grid-areas);
-  --grid-itemUser-UserKittens-Container: var(--main-grid-areas-items);
-  --grid-itemUser-kittenList-Container: var(--main-grid-areas-items-container);
-  --grid-itemUser-kittenCard-Container: var(--main-grid-areas-items-cards-container);
-  --grid-itemUser-kittenCard-Container-hover: var(--main-grid-areas-items-container-hover);
-  --grid-itemForm : var(--grid-areas);
-  --footer: var(--body-sections);
+    --header-border: var(--body-sections);
+    --main-grid-container-border: var(--body-sections);
+    --grid-itemList: var(--grid-areas);
+    --grid-itemList-CardsContainer-boder: var(--main-grid-areas-items);
+    --grid-itemList-CardContainer: var(--main-grid-areas-items-container);
+    --grid-itemList-CardContainer-hover: var(--main-grid-areas-items-container-hover);
+    --grid-itemUser: var(--grid-areas);
+    --grid-itemUser-UserKittens-Container: var(--main-grid-areas-items);
+    --grid-itemUser-kittenList-Container: var(--main-grid-areas-items-container);
+    --grid-itemUser-kittenCard-Container: var(--main-grid-areas-items-cards-container);
+    --grid-itemUser-kittenCard-Container-hover: var(--main-grid-areas-items-container-hover);
+    --grid-itemForm: var(--grid-areas);
+    --footer: var(--body-sections);
 
-  --kittenCard: 3px dotted magenta;
+    --kittenCard: 3px dotted magenta;
 }
- 
+
 
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: var(--global-font);
-  background-color: var(--body-bg);
-  box-shadow: var(--global-bsdw-color);
-  margin: .1rem;
-  padding: .1rem;
+    font-family: var(--global-font);
+    background-color: var(--body-bg);
+    box-shadow: var(--global-bsdw-color);
+    margin: .1rem;
+    padding: .1rem;
 
-  h1,
-  h2 {
-      color: var(--h1h2-color);
-  }
+    h1,
+    h2 {
+        color: var(--h1h2-color);
+    }
 
-  h3,
-  h4 {
-      color: var(--h3h4-color);
-      padding: .5rem;
-  }
+    h3,
+    h4 {
+        color: var(--h3h4-color);
+        padding: .5rem;
+    }
 
-  dfn {
-      color: var(--h3h4-color);
-  }
+    dfn {
+        color: var(--h3h4-color);
+    }
 
-  header {
-      display: block;
-      text-align: center;
-      background-color: var(--body-HeaderMainFooter-bg);
-      box-shadow: var(--global-bsdw-color);
-      padding: .5rem;
-      margin: .2rem;
-      border: var(--header-border);
-  }
+    header,
+    main,
+    footer {
+        max-width: 1200px;
+        margin: 0 auto;
 
-  /****** LIST in main ****/
-  .main-grid-container {
-      text-align: center;
-      background-color: var(--body-HeaderMainFooter-bg);
-      padding: .5rem;
-      margin: .2rem;
-      border: var(--main-grid-container-border);
+        //border: 2px solid crimson;
+    }
 
-      /* List Available Kitten */
-      .grid-itemList {
-          box-shadow: var(--global-bsdw-color);
-          border-radius: 1px;
-          border: var(--grid-itemList);
+    header {
+        display: block;
+        text-align: center;
+        background-color: var(--body-HeaderMainFooter-bg);
+        box-shadow: var(--global-bsdw-color);
+        padding: .5rem;
+        //margin: .2rem;
+        border: var(--header-border);
 
-          .grid-itemList-CardsContainer {
-              border-radius: 10px;
-              background-color: var(--list-CardsContainer-bg-color);
-              border: var(--grid-itemList-CardsContainer-boder);
+        // Header menu section //
+        header app-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            min-height: 12vh;
 
-              .grid-itemList-CardContainer {
-                  border-radius: 10px;
-                  background-color: var(--list-CardsContainer-bg-color);
-                  box-shadow: var(--list-CardsContainer-bx-Shadow);
-                  border: var(--grid-itemList-CardContainer);
-              }
-          }
+            //border: 3px solid rgb(77, 220, 20);
+        }
+    }
 
-          .grid-itemList-CardContainer:hover {
-              width: 22rem;
-              height: fit-content;
-              box-shadow: var(--global-bsdw-color);
-              transition: all 1s linear;
-              border: var(--grid-itemList-CardContainer-hover);
-          }
-      }
+/*     // Footer section //
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        //height: calc(100vh - 10vh - 12vh);
+    } */
 
-      /* User Kitten List */
-      .grid-itemUser {
-          background-color: var(--body-hmf-bg);
-          box-shadow: var(--global-bsdw-color);
-          border-radius: 1px;
-          border: var(--grid-itemUser);
+    /****** LIST in main ****/
+    .main-grid-container {
+        text-align: center;
+        background-color: var(--body-HeaderMainFooter-bg);
+        padding: .5rem;
+        margin: .2rem;
+        border: var(--main-grid-container-border);
 
-          .grid-itemUser-UserKittens-Container {
-              padding: .5rem;
-              margin: 2px;
-              background-color: var(--list-CardsContainer-bg-color);
-              border-radius: 10px;
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-              border: var(--grid-itemUser-UserKittens-Container);
+        /* List Available Kitten */
+        .grid-itemList {
+            box-shadow: var(--global-bsdw-color);
+            border-radius: 1px;
+            border: var(--grid-itemList);
 
-              .grid-itemUser-kittenList-Container {
-                  border-radius: 10px;
-                  border: var(--grid-itemUser-kittenList-Container);
+            .grid-itemList-CardsContainer {
+                border-radius: 10px;
+                background-color: var(--list-CardsContainer-bg-color);
+                border: var(--grid-itemList-CardsContainer-boder);
 
-                  .grid-itemUser-kittenCard-Container {
-                      border-radius: 10px;
-                      border: var(--grid-itemUser-kittenCard-Container);
-                  }
+                .grid-itemList-CardContainer {
+                    border-radius: 10px;
+                    background-color: var(--list-CardsContainer-bg-color);
+                    box-shadow: var(--list-CardsContainer-bx-Shadow);
+                    border: var(--grid-itemList-CardContainer);
+                }
+            }
 
-                  .grid-itemUser-kittenCard-Container:hover {
-                      width: 22rem;
-                      height: fit-content;
-                      box-shadow: var(--global-bsdw-color);
-                      transition: all 1s linear;
-                      border: var(--grid-itemUser-kittenCard-Container-hover);
-                  }
-              }
-          }
-      }
+            .grid-itemList-CardContainer:hover {
+                width: 22rem;
+                height: fit-content;
+                box-shadow: var(--global-bsdw-color);
+                transition: all 1s linear;
+                border: var(--grid-itemList-CardContainer-hover);
+            }
+        }
 
-      /* end list */
+        /* User Kitten List */
+        .grid-itemUser {
+            background-color: var(--body-hmf-bg);
+            box-shadow: var(--global-bsdw-color);
+            border-radius: 1px;
+            border: var(--grid-itemUser);
 
-      /* Form grid */
-      .grid-itemForm {
-          background-color: var(--body-hmf-bg);
-          box-shadow: var(--global-bsdw-color);
-          border-radius: 1px;
-          border: var(--grid-itemForm);
-      }
-  }
+            .grid-itemUser-UserKittens-Container {
+                padding: .5rem;
+                margin: 2px;
+                background-color: var(--list-CardsContainer-bg-color);
+                border-radius: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border: var(--grid-itemUser-UserKittens-Container);
 
-  footer {
-      display: block;
-      text-align: center;
-      background-color: var(--body-HeaderMainFooter-bg);
-      box-shadow: var(--global-bsdw-color);
-      padding: .5rem;
-      margin: .2rem;
-      border: var(--footer);
-  }
+                .grid-itemUser-kittenList-Container {
+                    border-radius: 10px;
+                    border: var(--grid-itemUser-kittenList-Container);
+
+                    .grid-itemUser-kittenCard-Container {
+                        border-radius: 10px;
+                        border: var(--grid-itemUser-kittenCard-Container);
+                    }
+
+                    .grid-itemUser-kittenCard-Container:hover {
+                        width: 22rem;
+                        height: fit-content;
+                        box-shadow: var(--global-bsdw-color);
+                        transition: all 1s linear;
+                        border: var(--grid-itemUser-kittenCard-Container-hover);
+                    }
+                }
+            }
+        }
+
+        /* end list */
+
+        /* Form grid */
+        .grid-itemForm {
+            background-color: var(--body-hmf-bg);
+            box-shadow: var(--global-bsdw-color);
+            border-radius: 1px;
+            border: var(--grid-itemForm);
+        }
+    }
+
+    footer {
+        display: block;
+        text-align: center;
+        background-color: var(--body-HeaderMainFooter-bg);
+        box-shadow: var(--global-bsdw-color);
+        padding: .5rem;
+        margin: .2rem;
+        border: var(--footer);
+    }
 }
+
 /*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
 /* Extra small devices (phones, 600px and down) */
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
-  body {
-      margin: .0 auto;
-      padding: 0;
+    body {
+        margin: .0 auto;
+        padding: 0;
 
-      h1 {
-          font-size: 1.2rem;
-      }
+        h1 {
+            font-size: 1.2rem;
+        }
 
-      h2 {
-          font-size: 1.1rem;
-      }
+        h2 {
+            font-size: 1.1rem;
+        }
 
-      h3 {
-          font-size: 1rem;
-      }
+        h3 {
+            font-size: 1rem;
+        }
 
-      h4 {
-          font-size: .9rem;
-      }
+        h4 {
+            font-size: .9rem;
+        }
 
-      header {
-          padding: .1rem;
-          width: 99%;
-      }
+        header {
+            padding: .1rem;
+            width: 99%;
+        }
 
-      /** liste **/
-      .main-grid-container {
-          display: grid;
-          grid-template-areas:
-              'list'
-              'user'
-              'form';
-          padding: .1rem;
-          margin: .1rem;
+        /** liste **/
+        .main-grid-container {
+            display: grid;
+            grid-template-areas:
+                'list'
+                'user'
+                'form';
+            padding: .1rem;
+            margin: .1rem;
 
-          .grid-itemList {
-              padding: 0;
-              display: grid;
-              grid-template-columns: 1fr;
-              align-items: center;
-              justify-content: center;
+            .grid-itemList {
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: center;
+                justify-content: center;
 
-              .grid-itemList-CardsContainer {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-              }
+                .grid-itemList-CardsContainer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-              .grid-itemList-CardContainer {
-                  padding: .5px;
-                  width: 12rem;
-                  max-width: 22rem;
-              }
-          }
+                .grid-itemList-CardContainer {
+                    padding: .5px;
+                    width: 12rem;
+                    max-width: 22rem;
+                }
+            }
 
-          .grid-itemUser {
-              padding: 0;
-              display: grid;
-              grid-template-columns: 1fr;
+            .grid-itemUser {
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr;
 
-              .grid-itemUser-UserKittens-Container {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-                  padding: 0;
-                  gap: 2px;
-              }
-          }
+                .grid-itemUser-UserKittens-Container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    gap: 2px;
+                }
+            }
 
-          /*end list*/
+            /*end list*/
 
 
-          .grid-itemForm {
-              grid-area: form;
-              padding: .5rem;
-              display: grid;
-              grid-template-columns: 1fr;
+            .grid-itemForm {
+                grid-area: form;
+                padding: .5rem;
+                display: grid;
+                grid-template-columns: 1fr;
 
-              form {
-                  fieldset {
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      justify-content: center;
+                form {
+                    fieldset {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
 
-                      input,
-                      label {
-                          width: 20rem;
-                      }
-                  }
-              }
-          }
-      }
+                        input,
+                        label {
+                            width: 20rem;
+                        }
+                    }
+                }
+            }
+        }
 
-      /* Kittend Card */
-      .kittenCard {
-          margin: .5rem;
-          box-shadow: var(--kittenCard_bx-shdow);
-          border-radius: 1% 30% 50% 70%;
-          width: 10rem;
-          height: 100%;
-          border: var(--kittenCard);
+        /* Kittend Card */
+        .kittenCard {
+            margin: .5rem;
+            box-shadow: var(--kittenCard_bx-shdow);
+            border-radius: 1% 30% 50% 70%;
+            width: 10rem;
+            height: 100%;
+            border: var(--kittenCard);
 
-          img {
-              border: 1px;
-              border-radius: 1% 30% 50% 90%;
-              width: 100%;
-          }
+            img {
+                border: 1px;
+                border-radius: 1% 30% 50% 90%;
+                width: 100%;
+            }
 
-          span {
-              visibility: hidden;
-              font-size: .2rem;
-          }
+            span {
+                visibility: hidden;
+                font-size: .2rem;
+            }
 
-          img:hover {
-              width: 20rem;
-              transition: width 5s linear 0;
-          }
+            img:hover {
+                width: 20rem;
+                transition: width 5s linear 0;
+            }
 
-          :hover+span {
-              width: 20rem;
-              visibility: visible;
-              font-size: 1rem;
-          }
+            :hover+span {
+                width: 20rem;
+                visibility: visible;
+                font-size: 1rem;
+            }
 
-          .pem {
-              color: var(--kittenCard-pem);
-              font-weight: bold;
-          }
-      }
+            .pem {
+                color: var(--kittenCard-pem);
+                font-weight: bold;
+            }
+        }
 
-  }
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 /* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 992px) {
-  body {
-      margin: .1rem auto;
-      padding: .1rem;
-  }
+    body {
+        margin: .1rem auto;
+        padding: .1rem;
+    }
 
-  header {
-      padding: .1rem;
-      margin: .5rem;
-      width: 99%;
-  }
+    header {
+        padding: .1rem;
+        margin: .5rem;
+        width: 99%;
+    }
 
-  /** liste **/
-  /* On screens that are 600px or less, set the background color to olive */
-  .main-grid-container {
-      display: grid;
-      grid-template-areas:
-          'list'
-          'user'
-          'form';
+    /** liste **/
+    /* On screens that are 600px or less, set the background color to olive */
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list'
+            'user'
+            'form';
 
-      .grid-itemList {
-          padding: .5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+        .grid-itemList {
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
 
-          .grid-itemList-CardsContainer {
-              grid-area: list;
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              align-items: center;
-              justify-items: center;
-              position: relative;
-              width: 100%;
+            .grid-itemList-CardsContainer {
+                grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                align-items: center;
+                justify-items: center;
+                position: relative;
+                width: 100%;
 
-              .grid-itemList-CardContainer {
-                  padding: .5px;
-                  width: 100%;
-                  max-width: 22rem;
-              }
+                .grid-itemList-CardContainer {
+                    padding: .5px;
+                    width: 100%;
+                    max-width: 22rem;
+                }
 
-          }
-      }
+            }
+        }
 
-      .grid-itemUser {
-          grid-area: user;
-          padding: .1rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
+        .grid-itemUser {
+            grid-area: user;
+            padding: .1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
 
-          .grid-itemUser-UserKittens-Container {
-              position: relative;
-              width: 100%;
+            .grid-itemUser-UserKittens-Container {
+                position: relative;
+                width: 100%;
 
-              .grid-itemUser-kittenList-Container {
-                  display: grid;
-                  grid-template-columns: 1fr 1fr 1fr;
-                  align-items: center;
-                  justify-items: center;
+                .grid-itemUser-kittenList-Container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    align-items: center;
+                    justify-items: center;
 
-                  .grid-itemUser-kittenCard-Container {
-                      padding: .5px;
-                      width: 100%;
-                      max-width: 22rem;
-                  }
-              }
-          }
-      }
+                    .grid-itemUser-kittenCard-Container {
+                        padding: .5px;
+                        width: 100%;
+                        max-width: 22rem;
+                    }
+                }
+            }
+        }
 
-      /*end list*/
-      .grid-itemForm {
-          grid-area: form;
-          padding: .5rem;
-          display: grid;
-          grid-template-columns: 1fr;
+        /*end list*/
+        .grid-itemForm {
+            grid-area: form;
+            padding: .5rem;
+            display: grid;
+            grid-template-columns: 1fr;
 
-          form {
-              fieldset {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
+            form {
+                fieldset {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
 
-                  input,
-                  label {
-                      width: 20rem;
-                  }
-              }
-          }
-      }
-  }
+                    input,
+                    label {
+                        width: 20rem;
+                    }
+                }
+            }
+        }
+    }
 
-  /* Kittend Card */
-  .kittenCard {
-      margin: .5rem;
-      box-shadow: var(--kittenCard_bx-shdow);
-      border-radius: 1% 30% 50% 70%;
-      width: 10rem;
-      height: 100%;
-      border: var(--kittenCard);
+    /* Kittend Card */
+    .kittenCard {
+        margin: .5rem;
+        box-shadow: var(--kittenCard_bx-shdow);
+        border-radius: 1% 30% 50% 70%;
+        width: 10rem;
+        height: 100%;
+        border: var(--kittenCard);
 
-      img {
-          border: 1px;
-          border-radius: 1% 30% 50% 90%;
-          width: 100%;
-      }
+        img {
+            border: 1px;
+            border-radius: 1% 30% 50% 90%;
+            width: 100%;
+        }
 
-      span {
-          visibility: hidden;
-          font-size: .2rem;
-      }
+        span {
+            visibility: hidden;
+            font-size: .2rem;
+        }
 
-      img:hover {
-          width: 20rem;
-          transition: width 5s linear 0;
-      }
+        img:hover {
+            width: 20rem;
+            transition: width 5s linear 0;
+        }
 
-      :hover+span {
-          width: 20rem;
-          visibility: visible;
-          font-size: 1rem;
-      }
+        :hover+span {
+            width: 20rem;
+            visibility: visible;
+            font-size: 1rem;
+        }
 
-      .pem {
-          color: var(--kittenCard-pem);
-          font-weight: bold;
-      }
-  }
+        .pem {
+            color: var(--kittenCard-pem);
+            font-weight: bold;
+        }
+    }
 
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
-  body {
-      margin: .1rem auto;
-      padding: .1rem;
-      width: 992px;
-  }
+    body {
+        margin: .1rem auto;
+        padding: .1rem;
+        width: 992px;
+    }
 
-  header {
-      padding: .1rem;
-      margin: .5rem;
-      width: 99%;
-  }
+    header {
+        padding: .1rem;
+        margin: .5rem;
+        width: 99%;
+    }
 
-  /** liste **/
-  .main-grid-container {
-      display: grid;
-      grid-template-areas:
-          'list list user'
-          'list list user'
-          'form form user';
+    /** liste **/
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list list user'
+            'list list user'
+            'form form user';
 
-      .grid-itemList {
-          padding: .5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 700px;
+        .grid-itemList {
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 700px;
 
-          .grid-itemList-CardsContainer {
-              grid-area: list;
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              align-items: center;
-              justify-items: center;
-              position: relative;
-              width: 100%;
+            .grid-itemList-CardsContainer {
+                grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                align-items: center;
+                justify-items: center;
+                position: relative;
+                width: 100%;
 
-              .grid-itemList-CardContainer {
-                  padding: .5px;
-                  width: 100%;
-                  max-width: 22rem;
-              }
+                .grid-itemList-CardContainer {
+                    padding: .5px;
+                    width: 100%;
+                    max-width: 22rem;
+                }
 
-          }
-      }
+            }
+        }
 
-      .grid-itemUser {
-          grid-area: user;
-          padding: .1rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          width: 300px;
+        .grid-itemUser {
+            grid-area: user;
+            padding: .1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
 
-          .grid-itemUser-UserKittens-Container {
-              position: relative;
-              width: 100%;
-              max-width: 400px;
+            .grid-itemUser-UserKittens-Container {
+                position: relative;
+                width: 100%;
+                max-width: 400px;
 
-              .grid-itemUser-kittenList-Container {
-                  display: grid;
-                  grid-template-columns: 1fr;
-                  align-items: center;
-                  justify-items: center;
+                .grid-itemUser-kittenList-Container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: center;
+                    justify-items: center;
 
-                  .grid-itemUser-kittenCard-Container {
-                      padding: .5px;
-                      width: 100%;
-                      max-width: 22rem;
-                  }
-              }
-          }
-      }
+                    .grid-itemUser-kittenCard-Container {
+                        padding: .5px;
+                        width: 100%;
+                        max-width: 22rem;
+                    }
+                }
+            }
+        }
 
-      /*end list*/
-      .grid-itemForm {
-          grid-area: form;
-          padding: .5rem;
-          display: grid;
-          grid-template-columns: 1fr;
-          width: 700px;
+        /*end list*/
+        .grid-itemForm {
+            grid-area: form;
+            padding: .5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 700px;
 
-          form {
-              fieldset {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
+            form {
+                fieldset {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
 
-                  input,
-                  label {
-                      width: 20rem;
-                  }
-              }
-          }
-      }
-  }
+                    input,
+                    label {
+                        width: 20rem;
+                    }
+                }
+            }
+        }
+    }
 
-  /* Kittend Card */
-  .kittenCard {
-      margin: .5rem;
-      box-shadow: var(--kittenCard_bx-shdow);
-      border-radius: 1% 30% 50% 70%;
-      width: 10rem;
-      height: 100%;
-      border: var(--kittenCard);
+    /* Kittend Card */
+    .kittenCard {
+        margin: .5rem;
+        box-shadow: var(--kittenCard_bx-shdow);
+        border-radius: 1% 30% 50% 70%;
+        width: 10rem;
+        height: 100%;
+        border: var(--kittenCard);
 
-      img {
-          border: 1px;
-          border-radius: 1% 30% 50% 90%;
-          width: 100%;
-      }
+        img {
+            border: 1px;
+            border-radius: 1% 30% 50% 90%;
+            width: 100%;
+        }
 
-      span {
-          visibility: hidden;
-          font-size: .2rem;
-      }
+        span {
+            visibility: hidden;
+            font-size: .2rem;
+        }
 
-      img:hover {
-          width: 20rem;
-          transition: width 5s linear 0;
-      }
+        img:hover {
+            width: 20rem;
+            transition: width 5s linear 0;
+        }
 
-      :hover+span {
-          width: 20rem;
-          visibility: visible;
-          font-size: 1rem;
-      }
+        :hover+span {
+            width: 20rem;
+            visibility: visible;
+            font-size: 1rem;
+        }
 
-      .pem {
-          color: var(--kittenCard-pem);
-          font-weight: bold;
-      }
-  }
+        .pem {
+            color: var(--kittenCard-pem);
+            font-weight: bold;
+        }
+    }
 }
