@@ -1,23 +1,26 @@
+<!-- HEADER -->
 <header>
   <app-menu><a routerLink="/menu"></a></app-menu>
-
 </header>
+
+<!-- MAIN -->
 <main>
   <router-outlet></router-outlet>
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div>
     <small>Copyright © 2024 chatons.org. Tous droits réservés.</small>
-</div>
-<div>
-  <ul>
-    <li>
-      <a [routerLink]="['/about']">A propos</a>
-    </li>
-    <li>
-      <a [routerLink]="['/contact']">Contact</a>
-    </li>
-  </ul>
-</div>
+  </div>
+  <div>
+    <ul>
+      <li>
+        <a [routerLink]="['/about']">A propos</a>
+      </li>
+      <li>
+        <a [routerLink]="['/contact']">Contact</a>
+      </li>
+    </ul>
+  </div>
 </footer>
