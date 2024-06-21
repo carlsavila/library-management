@@ -1,0 +1,82 @@
+<p>form works!</p>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div>
+        <!-- Form check -->
+        @if (myForm.invalid) {
+        <em class="msgColorAlert">Formulaire à completer</em>
+        } @else if (!myForm.submitted) {
+        <em class="msgColorValid">completé,</em><em class="msgColorAlert"> à envoyer</em>
+        } @else {
+        <em class="msgColorValid"> Form submitted : {{myForm.submitted}}, valid : {{myForm.valid}}. invalid :
+            {{myForm.invalid}}.</em>
+        }
+    </div>
+    <!--Firstname/Name-->
+    <fieldset>
+        <label for="fname">Prénom/nom </label>
+        <input id="fname" name="fname" type="text" [(ngModel)]="u_firstname" #fname="ngModel" required minlength="2"
+            maxlength="20" placeholder="Prénom/Nom">
+    </fieldset>
+    <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
+    <div *ngIf="fname.errors; elseTitle">
+        <em *ngIf="fname.errors?.['required']" class="msgColorAlert">le champ titre est requis</em>
+        <em *ngIf="fname.errors?.['minlength']" class="msgColorAlert">la longueur minimale doit être supérieure à 2</em>
+        <em *ngIf="fname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
+            20</em>
+    </div>
+    <!--Lastname/Breed-->
+    <fieldset>
+        <label for="lname">Nom </label>
+        <input id="lname" name="lname" type="text" [(ngModel)]="u_lastname" #lname="ngModel" required minlength="2"
+            maxlength="20" placeholder="Nom/Race">
+    </fieldset>
+    <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
+    <div *ngIf="lname.errors; elseTitle">
+        <em *ngIf="lname.errors?.['required']" class="msgColorAlert">le champ titre est requis</em>
+        <em *ngIf="lname.errors?.['minlength']" class="msgColorAlert">la longueur minimale doit être supérieure à 2</em>
+        <em *ngIf="lname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
+            20</em>
+    </div>
+
+    <!--sex-->
+    <fieldset>
+        <legend>Sexe </legend>
+        <label for="male">masculin</label>
+        <input id="male" type="radio" name="radio" value="male" [(ngModel)]="u_sex" #user_sex="ngModel" />
+        <label for="female">féminin</label>
+        <input id="female" type="radio" name="radio" value="female" [(ngModel)]="u_sex" #user_sex="ngModel" />
+        <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten race -->
+        <div *ngIf="user_sex.errors, elseQuantity">
+            <em *ngIf="user_sex.errors?.['required']" class="msgColorAlert">la selection sex est requis</em>
+        </div>
+    </fieldset>
+
+
+    <!--Birthday-->
+    <fieldset>
+        <label for="kitten-birthday-date">Date de naissance </label>
+        <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="u_birthday"
+            #birthdayDateKitten="ngModel" required>
+        <!-- Vérification and Message d'erreurs de date -->
+        <div *ngIf="birthdayDateKitten.errors, elseDate"><em *ngIf="birthdayDateKitten.errors?.['required']"
+                class="msgColorAlert">Le champ date est requis</em>
+        </div>
+    </fieldset>
+
+
+    <!-- Picture -->
+    <fieldset>
+        <label for="kitten-picture">Photo </label>
+        <input id="kitten-picture" name="kitten-picture" type="file" [(ngModel)]="u_picture" #pictureKitten="ngModel"
+            required>
+        <!-- Vérification and Message d'erreurs de contact -->
+        <div *ngIf="pictureKitten.errors,  elseContact"><em *ngIf="pictureKitten.errors?.['required']"
+                class="msgColorAlert">le champ image est requis</em>
+        </div>
+    </fieldset>
+
+    <!--Boutons reset, submit -->
+    <button type="reset">Effacer</button>
+    <button type="submit" [disabled]="myForm.invalid" [ngClass]="btnStyle">Envoyer</button>
+</form>

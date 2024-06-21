@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { Kitten } from '../../model/kitten/kitten';
-import { KittenComponent } from '../kitten/kitten.component';
+import { Kitten } from '../../../model/kitten/kitten';
+import { KittenComponent } from '../../../components/kitten/kitten.component';
 
 @Component({
-  selector: 'app-person',
+  selector: 'app-user',
   standalone: true,
   imports: [KittenComponent],
-  templateUrl: './person.component.html',
-  styleUrl: './person.component.scss'
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.scss'
 })
-export class PersonComponent {
+export class UserComponent {
 
   // List to welcome adopted kitten by user.
   @Input()
