@@ -1,4 +1,4 @@
-@use "./import" as *;
+/* @use "./import" as *;
 
 
 * {
@@ -78,10 +78,10 @@ h3 {
       font-weight: 600;
     }
   }
-
-  
+*/
+/*  
 :root {
-  /* styles */
+  // styles /
   --global-font: "Open Sans";
   --body-bg: rgb(253, 245, 230);
   --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
@@ -90,26 +90,26 @@ h3 {
   --h3h4-color: rgb(76, 157, 4);
   --dfn-color: rgb(82, 88, 77);
 
-  /*List cards container*/
+  // List cards container/
   --list-CardsContainer-bg-color: rgb(253, 245, 230);
   --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  /* Form */
+  // Form /
   --form_boder: 1px solid #ccc;
-  /* form-kitten */
+  // form-kitten /
   --bnt-dbled-color: grey;
   --bnt-dbled-bg-color: antiquewhite;
   --bnt-ebled-color: antiquewhite;
   --bnt-ebled-bg-color: green;
-  /* Alertes */
+  // Alertes /
   --msgColorAlert: orange;
   --msgColorValid: green;
 
-  /* KittenCard */
+  // KittenCard /
   --kittenCard_bx-shdow: 2px 2px 50px 10px rgb(245, 236, 161);
   --kittenCard-pem: rgb(176, 45, 73);
 
-  /** Borders to  DEBUG **/
+  // Borders to  DEBUG /
   --body-sections: 3px dotted red;
   --grid-areas: 5px dotted green;
   --main-grid-areas-items: 3px dotted blue;
@@ -133,6 +133,8 @@ h3 {
 
   --kittenCard: 3px dotted magenta;
 }
+ 
+*/
 
 * {
   padding: 0;
