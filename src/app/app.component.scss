@@ -2,28 +2,7 @@
 
 
 
-
-
-// Footer section //
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-
-    address,
-    ul,
-    small {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 5px;
-    }
-}
-
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
 
     h1 {
         font-size: 2rem;
@@ -84,4 +63,4 @@ footer {
         }
     }
 
-}
+} */
