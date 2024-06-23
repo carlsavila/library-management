@@ -5,23 +5,24 @@
     padding: 0;
     margin: 0;
 
-    //border: var(--main-grid-container-border);
-    //border: .1px solid greenyellow;
+    
+    //border: var(--main-grid-container-border); // For DEBUGGING pourpose. to remove
+    //border: .1px solid greenyellow; // For DEBUGGING pourpose. to remove
 
     /* List Available Kitten */
     .grid-itemList {
         box-shadow: var(--global-bsdw-color);
         border-radius: 10px;
 
-        //border: var(--grid-itemList);
-        //border: 5px solid fuchsia;
+        //border: var(--grid-itemList); // For DEBUGGING pourpose. to remove
+        //border: 5px solid fuchsia; // For DEBUGGING pourpose. to remove
 
         .grid-itemList-CardsContainer {
             border-radius: 10px;
             background-color: var(--list-CardsContainer-bg-color);
 
-            //border: var(--grid-itemList-CardsContainer-boder);
-            //border: 5px solid greenyellow;
+            //border: var(--grid-itemList-CardsContainer-boder); // For DEBUGGING pourpose. to remove
+            //border: 5px solid greenyellow; // For DEBUGGING pourpose. to remove
 
             .grid-itemList-CardContainer {
                 border-radius: 10px;
@@ -90,7 +91,7 @@
  /* Extra small devices (phones, 600px and down) */
  /* Small devices (portrait tablets and large phones, 600px and up) */
  @media screen and (max-width: 600px) {
-        /** liste **/
+        /** list **/
         .main-grid-container {
             display: grid;
             grid-template-areas:
@@ -261,7 +262,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
 
-    /** liste **/
+    /** List **/
     // main grid LIST available KITTENS/USER4 KITTENS/FORM NEW KITTEN //
     .main-grid-container {
         display: grid;
@@ -287,14 +288,12 @@
                 grid-area: list;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
-                //grid-template-columns: auto auto auto;
                 align-items: center;
                 justify-items: center;
                 position: relative;
                 width: 100%;
 
                 .grid-itemList-CardContainer {
-                    //padding: .5px;
                     width: 100%;
                     max-width: 22rem;
 
