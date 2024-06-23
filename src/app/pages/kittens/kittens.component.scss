@@ -1,0 +1,368 @@
+/****** LIST in main ****/
+.main-grid-container {
+    text-align: center;
+    background-color: var(--body-HeaderMainFooter-bg);
+    padding: 0;
+    margin: 0;
+
+    //border: var(--main-grid-container-border);
+    //border: .1px solid greenyellow;
+
+    /* List Available Kitten */
+    .grid-itemList {
+        box-shadow: var(--global-bsdw-color);
+        border-radius: 10px;
+
+        //border: var(--grid-itemList);
+        //border: 5px solid fuchsia;
+
+        .grid-itemList-CardsContainer {
+            border-radius: 10px;
+            background-color: var(--list-CardsContainer-bg-color);
+
+            //border: var(--grid-itemList-CardsContainer-boder);
+            //border: 5px solid greenyellow;
+
+            .grid-itemList-CardContainer {
+                border-radius: 10px;
+                background-color: var(--list-CardsContainer-bg-color);
+                box-shadow: var(--list-CardsContainer-bx-Shadow);
+            }
+        }
+
+        .grid-itemList-CardContainer:hover {
+            width: 22rem;
+            height: fit-content;
+            box-shadow: var(--global-bsdw-color);
+            transition: all 1s linear;
+            border: var(--grid-itemList-CardContainer-hover);
+        }
+    }
+
+    /* User Kitten List */
+    .grid-itemUser {
+        background-color: var(--body-hmf-bg);
+        box-shadow: var(--global-bsdw-color);
+        border-radius: 1px;
+
+        .grid-itemUser-UserKittens-Container {
+            padding: .5rem;
+            margin: 2px;
+            background-color: var(--list-CardsContainer-bg-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: var(--grid-itemUser-UserKittens-Container);
+
+            .grid-itemUser-kittenList-Container {
+                border-radius: 10px;
+                border: var(--grid-itemUser-kittenList-Container);
+
+                .grid-itemUser-kittenCard-Container {
+                    border-radius: 10px;
+                    border: var(--grid-itemUser-kittenCard-Container);
+                }
+
+                .grid-itemUser-kittenCard-Container:hover {
+                    width: 22rem;
+                    height: fit-content;
+                    box-shadow: var(--global-bsdw-color);
+                    transition: all 1s linear;
+                    border: var(--grid-itemUser-kittenCard-Container-hover);
+                }
+            }
+        }
+    }
+    /* end list */
+
+    /* Form grid */
+    .grid-itemForm {
+        background-color: var(--body-hmf-bg);
+        box-shadow: var(--global-bsdw-color);
+        border-radius: 1px;
+
+        border: var(--grid-itemForm);
+        border: 5px solid greenyellow;
+    }
+}
+
+
+ /*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
+ /* Extra small devices (phones, 600px and down) */
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media screen and (max-width: 600px) {
+        /** liste **/
+        .main-grid-container {
+            display: grid;
+            grid-template-areas:
+                'list'
+                'user'
+                'form';
+            padding: .1rem;
+            margin: .1rem;
+
+            .grid-itemList {
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: center;
+                justify-content: center;
+
+                .grid-itemList-CardsContainer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .grid-itemList-CardContainer {
+                    padding: .5px;
+                    width: 12rem;
+                    max-width: 22rem;
+                }
+            }
+
+            .grid-itemUser {
+                padding: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+
+                .grid-itemUser-UserKittens-Container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    gap: 2px;
+                }
+            }
+
+            /*end list*/
+
+
+            .grid-itemForm {
+                grid-area: form;
+                padding: .5rem;
+                display: grid;
+                grid-template-columns: 1fr;
+
+                form {
+                    fieldset {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        input,
+                        label {
+                            width: 20rem;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 601px) and (max-width: 992px) {
+
+    /** liste **/
+    /* On screens that are 600px or less, set the background color to olive */
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list'
+            'user'
+            'form';
+
+        .grid-itemList {
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+
+            .grid-itemList-CardsContainer {
+                grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                align-items: center;
+                justify-items: center;
+                position: relative;
+                width: 100%;
+
+                .grid-itemList-CardContainer {
+                    padding: .5px;
+                    width: 100%;
+                    max-width: 22rem;
+                }
+
+            }
+        }
+
+        .grid-itemUser {
+            grid-area: user;
+            padding: .1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            .grid-itemUser-UserKittens-Container {
+                position: relative;
+                width: 100%;
+
+                .grid-itemUser-kittenList-Container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    align-items: center;
+                    justify-items: center;
+
+                    .grid-itemUser-kittenCard-Container {
+                        padding: .5px;
+                        width: 100%;
+                        max-width: 22rem;
+                    }
+                }
+            }
+        }
+
+        /*end list*/
+        .grid-itemForm {
+            grid-area: form;
+            padding: .5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            form {
+                fieldset {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    input,
+                    label {
+                        width: 20rem;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 992px) {
+
+    /** liste **/
+    // main grid LIST available KITTENS/USER4 KITTENS/FORM NEW KITTEN //
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list list user'
+            'list list user'
+            'form form user';
+        border: 5px solid green;
+
+        // section grid LIST available KITTENS //
+        .grid-itemList {
+            //padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 600px;
+            height: 100%;
+
+            border: 5px solid yellowgreen;
+
+            .grid-itemList-CardsContainer {
+                grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                //grid-template-columns: auto auto auto;
+                align-items: center;
+                justify-items: center;
+                position: relative;
+                width: 100%;
+
+                .grid-itemList-CardContainer {
+                    //padding: .5px;
+                    width: 100%;
+                    max-width: 22rem;
+
+                    border: 5px solid dodgerblue;
+                }
+
+            }
+        }
+
+        // section grid USER'S KITTENS //
+        .grid-itemUser {
+            grid-area: user;
+            padding: .1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            width: 200px;
+            height: 100%;
+
+            border: 5px solid red;
+
+            .grid-itemUser-UserKittens-Container {
+                position: relative;
+                width: 100%;
+                max-width: 400px;
+                height: inherit;
+
+                .grid-itemUser-kittenList-Container {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    align-items: center;
+                    justify-items: center;
+
+                    .grid-itemUser-kittenCard-Container {
+                        padding: .5px;
+                        width: 100%;
+                        max-width: 22rem;
+
+                    }
+                }
+            }
+        }
+
+        /* end list */
+
+        // section grid FORME ADD A KITTEN //
+        .grid-itemForm {
+            grid-area: form;
+            padding: .5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 600px;
+
+            form {
+                fieldset {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    input,
+                    label {
+                        width: 20rem;
+                    }
+                }
+            }
+        }
+    }
+}
