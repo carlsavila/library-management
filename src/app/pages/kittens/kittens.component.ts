@@ -24,11 +24,11 @@ export class KittensComponent {
   ngOnInit() {
     this.availableKittens = this.kittenService.kittens;
 
-    // view port : 
-    console.log("viewportWidth = ", window.innerWidth);
-    console.log("viewportHeight = ", window.innerHeight);
-    console.log("value of the Windows pixel density", window.devicePixelRatio)
-    console.log("value of the Windows pixel density", window.devicePixelRatio)
+    // view port : person
+    //console.log("viewportWidth = ", window.innerWidth);
+   // console.log("viewportHeight = ", window.innerHeight);
+    //console.log("value of the Windows pixel density", window.devicePixelRatio)
+    //console.log("value of the Windows pixel density", window.devicePixelRatio)
 
   }
   // To add new received kitten from create-kitten @Output, sent by the form-kitten
@@ -43,9 +43,9 @@ export class KittensComponent {
   deletedElement!: Kitten[];
   //to send adopted kitten to user
   sendAdoptedKittenToUser(id: number) {
-    console.log(`Sent adopted kitten id : ${id} to user`)
+    console.log(`Sent adopted kitten, id : ${id} to user`)
     /*
-        // PI:  Méthode find kitten
+        // PI: e.g. other find kitten function
         const kittenToGiveToUser = this.availableKittens.find(
           (sentkitten) => sentkitten.id === id
         );
@@ -62,7 +62,7 @@ export class KittensComponent {
           console.log(`Index : ${indexOfItem} of retrived kitten to remove available kittens list`);
           // delete from list
           this.deletedElement = this.availableKittens.splice(indexOfItem, 1)
-          console.log(`Result from deleting kitten : ${this.deletedElement}`);
+          console.log(`Kitten delete result : ${this.deletedElement}`);
 
           alert("Et voilà! Pour la vie! :)")
         }

@@ -1,52 +1,81 @@
 import { CommonModule, NgClass } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Person } from '../../model/person/person';
+import { Kitten } from '../../model/kitten/kitten';
 
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [CommonModule,FormsModule, NgClass],
+  imports: [CommonModule, FormsModule, NgClass],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
 export class FormComponent {
 
-  
-  u_firstname: string = "";
-  u_lastname: string = "";
-  u_sex: string = "";
-  u_email: string = "";
-  u_password: string = "";
-  u_birthday: Date = new Date;
-  u_mobilNumber: string = "";
-  u_picture: string = "";
+  @Input()
+  label_e_firstname!: string;
+  @Input()
+  label_e_lastname!: string;
+  @Input()
+  placeHolder_e_firstname!: string;
+  @Input()
+  placeHolder_e_lastname!: string;
+
+
+  e_firstname: string = "";
+  e_lastname: string = "";
+  e_sex: string = "";
+  e_birthday: Date = new Date;
+  e_picture: string = "";
+  e_email: string = "";
+  e_password: string = "";
+  e_mobilNumber: string = "";
 
   // New user object to send to create-user login
   newUser?: Person;
+  // New kitten object to send to create-user login
+  newKitten?: Kitten;
+
   // EventEmitter to create user login
   @Output()
-  newUserDataToEmit : EventEmitter<Person> = new EventEmitter();
+  newUserDataToEmit: EventEmitter<Person> = new EventEmitter();
+
+  // EventEmitter to create user login
+  @Output()
+  newKittenDataToEmit: EventEmitter<Kitten> = new EventEmitter();
 
   // change Button color on submit
   btnStyle!: string;
   onSubmit(myForm: NgForm): void {
-    console.log("Submit du formulaire ajoute de l'utilisateur à la collection")
-    console.log("Le bouton du formulaire change de couleur pour montrer que le formulaire est valide");
-    this.newUser = new Person(
-      this. u_firstname,
-      this. u_lastname,
-      this. u_sex,
-      this. u_birthday,
-      this. u_email,
-      this. u_password,
-      this. u_mobilNumber,
-      this. u_picture,
-    );
+    const person = false;
+    if (person) {
+      console.log("Form submited. User added to the users List.")
+      this.newUser = new Person(
+        this.e_firstname,
+        this.e_lastname,
+        this.e_sex,
+        this.e_birthday,
+        this.e_email,
+        this.e_password,
+        this.e_mobilNumber,
+        this.e_picture,
+      );
+      this.newUserDataToEmit.emit(this.newUser);
 
-    this.newUserDataToEmit.emit(this.newUser);
-    myForm.onReset()
+    } else {
+      console.log("Form submited. Kitten added to the available kittens.")
+      this.newKitten = new Kitten(
+        this.e_firstname,
+        this.e_lastname,
+        this.e_birthday,
+        this.e_picture);
+
+      this.newKittenDataToEmit.emit(this.newKitten);
+    }
+    myForm.onReset();
+    console.log("Form resetted and button \"envoyer\" deactived");
+
   }
-
 }

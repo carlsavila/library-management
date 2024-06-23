@@ -1,3 +1,4 @@
+<h4>Fiche gérique (en cours)</h4>
 
 <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <div>
@@ -13,9 +14,9 @@
     </div>
     <!--Firstname/Name-->
     <fieldset>
-        <label for="fname">Prénom/nom </label>
-        <input id="fname" name="fname" type="text" [(ngModel)]="u_firstname" #fname="ngModel" required minlength="2"
-            maxlength="20" placeholder="Prénom/Nom">
+        <label for="fname">{{label_e_firstname}} </label>
+        <input id="fname" name="fname" type="text" [(ngModel)]="e_firstname" #fname="ngModel" required minlength="2"
+            maxlength="20" placeholder={{placeHolder_e_firstname}}>
     </fieldset>
     <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
     <div *ngIf="fname.errors; elseTitle">
@@ -26,9 +27,9 @@
     </div>
     <!--Lastname/Breed-->
     <fieldset>
-        <label for="lname">Nom </label>
-        <input id="lname" name="lname" type="text" [(ngModel)]="u_lastname" #lname="ngModel" required minlength="2"
-            maxlength="20" placeholder="Nom/Race">
+        <label for="lname">{{label_e_lastname}} </label>
+        <input id="lname" name="lname" type="text" [(ngModel)]="e_lastname" #lname="ngModel" required minlength="2"
+            maxlength="20" placeholder="{{placeHolder_e_lastname}}">
     </fieldset>
     <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
     <div *ngIf="lname.errors; elseTitle">
@@ -42,9 +43,9 @@
     <fieldset>
         <legend>Sexe </legend>
         <label for="male">masculin</label>
-        <input id="male" type="radio" name="radio" value="male" [(ngModel)]="u_sex" #user_sex="ngModel" />
+        <input id="male" type="radio" name="radio" value="male" [(ngModel)]="e_sex" #user_sex="ngModel" />
         <label for="female">féminin</label>
-        <input id="female" type="radio" name="radio" value="female" [(ngModel)]="u_sex" #user_sex="ngModel" />
+        <input id="female" type="radio" name="radio" value="female" [(ngModel)]="e_sex" #user_sex="ngModel" />
         <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten race -->
         <div *ngIf="user_sex.errors, elseQuantity">
             <em *ngIf="user_sex.errors?.['required']" class="msgColorAlert">la selection sex est requis</em>
@@ -55,19 +56,17 @@
     <!--Birthday-->
     <fieldset>
         <label for="kitten-birthday-date">Date de naissance </label>
-        <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="u_birthday"
-            #birthdayDateKitten="ngModel" required>
+        <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="e_birthday"  #birthdayDateKitten="ngModel" required><em class="msgColorAlert">{{e_birthday| date:'dd/MM/yyyy'}}</em>
         <!-- Vérification and Message d'erreurs de date -->
-        <div *ngIf="birthdayDateKitten.errors, elseDate"><em *ngIf="birthdayDateKitten.errors?.['required']"
+        <div *ngIf="birthdayDateKitten.errors"><em *ngIf="birthdayDateKitten.errors?.['required']"
                 class="msgColorAlert">Le champ date est requis</em>
         </div>
     </fieldset>
 
-
     <!-- Picture -->
     <fieldset>
         <label for="kitten-picture">Photo </label>
-        <input id="kitten-picture" name="kitten-picture" type="file" [(ngModel)]="u_picture" #pictureKitten="ngModel"
+        <input id="kitten-picture" name="kitten-picture" type="text" [(ngModel)]="e_picture" #pictureKitten="ngModel" placeholder="un lien url de sa photo"
             required>
         <!-- Vérification and Message d'erreurs de contact -->
         <div *ngIf="pictureKitten.errors,  elseContact"><em *ngIf="pictureKitten.errors?.['required']"

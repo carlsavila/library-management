@@ -1,12 +1,11 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Kitten } from '../../../model/kitten/kitten';
-import { FormkittenComponent } from '../../formkitten/formkitten/formkitten.component';
-
+import { FormComponent } from '../../form/form.component';
 
 @Component({
   selector: 'app-newkitten',
   standalone: true,
-  imports: [FormkittenComponent],
+  imports: [FormComponent],
   templateUrl: './newkitten.component.html',
   styleUrl: './newkitten.component.scss'
 })
@@ -17,8 +16,13 @@ export class NewkittenComponent {
   @Output()
   createKittenEmitter: EventEmitter<Kitten> = new EventEmitter();
 
+  nameLabel : string= "Nom ";
+  ageLabel : string= "Race ";
+  namePlaceHolder : string= "son nom";
+  agePlaceHolder : string= "sa race";
 
-  gettingNewKitten (event: Kitten) {
+
+  gettingNewKitten (event: any) {
     console.log("receiving new created kitten got from form-kitten");
     this.toReceiveNewKitten = event;
     // sending new received kitten to list-kitten
@@ -28,6 +32,6 @@ export class NewkittenComponent {
   // To send the shared above Kittens List
   sendKittenToAvailabeKittenList(): void {
     console.log("Sending Avalaible Kettins List to Parents")
-
+    this.createKittenEmitter.emit(this.toReceiveNewKitten);
   }
 }

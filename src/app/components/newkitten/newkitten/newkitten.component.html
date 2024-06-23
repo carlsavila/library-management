@@ -1,6 +1,16 @@
 <h3>Accueil Chaton</h3>
 
 <!-- matching form-kitten's kitten and create-kitten's kitten -->
+<!--
+
 <app-formkitten
 (newKittenDataToChange)="gettingNewKitten($event)">
-</app-formkitten>
+</app-formkitten>-->
+<app-form 
+(newKittenDataToEmit)="gettingNewKitten($event)"
+[label_e_firstname]="nameLabel"
+[label_e_lastname]="ageLabel"
+[placeHolder_e_firstname]="namePlaceHolder"
+[placeHolder_e_lastname]="agePlaceHolder"
+>
+</app-form>
