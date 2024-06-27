@@ -25,10 +25,12 @@ export class FormComponent {
 
   // New user object to send to create-user login
   newUser?: Person;
+   // New kitten object to send to add to available kittens
   newKitten?: Kitten;
-  // EventEmitter to create user login
+  // EventEmitter to register user login
   @Output()
   newUserDataToEmit: EventEmitter<Person> = new EventEmitter();
+  // EventEmitter to add new kitten login
   @Output()
   newKittenDataToEmit: EventEmitter<Kitten> = new EventEmitter();
 
