@@ -1,12 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Kitten } from '../../../model/kitten/kitten';
 import { FormkittenComponent } from '../../formkitten/formkitten/formkitten.component';
+import { FormComponent } from '../../form/form.component';
 
 
 @Component({
   selector: 'app-newkitten',
   standalone: true,
-  imports: [FormkittenComponent],
+  imports: [FormkittenComponent, FormComponent],
   templateUrl: './newkitten.component.html',
   styleUrl: './newkitten.component.scss'
 })

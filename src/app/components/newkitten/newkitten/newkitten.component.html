@@ -1,6 +1,10 @@
 <h3>Accueil Chaton</h3>
 
-<!-- matching form-kitten's kitten and create-kitten's kitten -->
+<!-- matching form-kitten's kitten and create-kitten's kitten 
 <app-formkitten
 (newKittenDataToChange)="gettingNewKitten($event)">
 </app-formkitten>
+-->
+<app-form
+(newKittenDataToEmit)="gettingNewKitten($event)">
+</app-form>

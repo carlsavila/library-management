@@ -55,7 +55,7 @@ export class KittensComponent {
       })
   }
 
-  getServiceKittenAdoptedKitens(): Kitten[] {
+  getServiceKittenAdoptedKitten(): Kitten[] {
     return this.kittenService.getAdoptedKittens();
   }
 
