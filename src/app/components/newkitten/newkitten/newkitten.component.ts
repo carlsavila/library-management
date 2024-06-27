@@ -19,15 +19,9 @@ export class NewkittenComponent {
 
 
   gettingNewKitten (event: Kitten) {
-    console.log("receiving new created kitten got from form-kitten");
     this.toReceiveNewKitten = event;
     // sending new received kitten to list-kitten
     this.createKittenEmitter.emit(event);
   }
 
-  // To send the shared above Kittens List
-  sendKittenToAvailabeKittenList(): void {
-    console.log("Sending Avalaible Kettins List to Parents")
-
-  }
 }

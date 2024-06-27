@@ -3,7 +3,7 @@
     <dfn>Mes châtons</dfn>
 
     <div class="grid-itemUser-kittenList-Container">
-        @for (kitten of userAdoptedKittenList; track $index) {
+        @for (kitten of userAdoptedKittens; track $index) {
         <div class="grid-itemUser-kittenCard-Container">
             <app-kitten [kittenCard]="kitten"></app-kitten>
         </div>

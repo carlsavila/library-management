@@ -4,6 +4,7 @@ import { Kitten } from '../../model/kitten/kitten';
 import { KittenComponent } from '../../components/kitten/kitten.component';
 import { NewkittenComponent } from '../../components/newkitten/newkitten/newkitten.component';
 import { UserComponent } from '../user/user/user.component';
+import { Item } from '../../model/item/item';
 
 @Component({
   selector: 'app-kittens',
@@ -14,59 +15,53 @@ import { UserComponent } from '../user/user/user.component';
 })
 export class KittensComponent {
 
-  // kitten service
+  // KittensService injection (to get, add available kittens and adopted user's kitten(s)).
   private kittenService: KittensService = inject(KittensService);
 
-
-  // List to welcome new added Kittens. 
-  availableKittens: Kitten[] = [];
-
-  ngOnInit() {
-    this.availableKittens = this.kittenService.kittens;
-
-    // view port : 
-    console.log("viewportWidth = ", window.innerWidth);
-    console.log("viewportHeight = ", window.innerHeight);
-    console.log("value of the Windows pixel density", window.devicePixelRatio)
-    console.log("value of the Windows pixel density", window.devicePixelRatio)
-
-  }
-  // To add new received kitten from create-kitten @Output, sent by the form-kitten
-  addNewReceivedKitten(event: Kitten) {
-    console.log("adding new received created kitten by create-kitten received by simultaneously the form-kitten")
-    this.availableKittens.push(event);
+  getServiceKittenJsonKittens(): void {
+    console.log("Récupération Json Kittens : ")
+    this.kittenService.getJsonKittensAndPushToAvailableKittens();
   }
 
-  // List to Manage Users adopted  Kittens. 
-  userAdoptedKittens: Kitten[] = [];
+  getServiceKittenAvailableKittens(): Kitten[] {
+    return this.kittenService.getAvailableKittens();
+  }
 
-  deletedElement!: Kitten[];
-  //to send adopted kitten to user
-  sendAdoptedKittenToUser(id: number) {
-    console.log(`Sent adopted kitten id : ${id} to user`)
-    /*
-        // PI:  Méthode find kitten
-        const kittenToGiveToUser = this.availableKittens.find(
-          (sentkitten) => sentkitten.id === id
-        );
-    */
-    // Méthode mapping kitten
-    this.availableKittens.map(
-      (kittenElement: Kitten) => {
-        if (kittenElement.id === id) {
-          console.log(`Matched kitten ID : ${id} to send to user kitten list`);
-          this.userAdoptedKittens.push(kittenElement);
-          console.log(`kitten pushed : ${kittenElement.name, kittenElement.id}`);
+  // Function to add new kitten received from create-kitten's @Output, using the form
+  addNewAvailableKitten(event: Kitten) {
+    this.kittenService.addAvailableKitten(event);
+  }
 
-          const indexOfItem = this.availableKittens.indexOf(kittenElement);
-          console.log(`Index : ${indexOfItem} of retrived kitten to remove available kittens list`);
-          // delete from list
-          this.deletedElement = this.availableKittens.splice(indexOfItem, 1)
-          console.log(`Result from deleting kitten : ${this.deletedElement}`);
+  // Funnction to send the adopted kitten to the user
+  addAdoptedKittenToUserKittenLis(kittenIndex: number) {
 
-          alert("Et voilà! Pour la vie! :)")
+    console.log("got index ", kittenIndex)
+    // Searching the adopted kitten by id in available kittens list.
+    this.kittenService.getAvailableKittens().find(
+      (kittenItem, index) => {
+
+        if (index === kittenIndex) {
+          console.log("item ", Item, " of index ", index);
+          // Adding found kitten to the user's adopted kitten.
+          console.log("kitten found ", kittenItem)
+          this.kittenService.addAdoptedKitten(kittenItem);
+
+          const indexOfItem = this.kittenService.getAvailableKittens().indexOf(kittenItem);
+          // Delete from list by element corresponding to the indexOfItem 
+          this.kittenService.removeAvailableKitten(indexOfItem);
+
+          alert("Et voilà! Pour la vie ! 😀")
         }
       })
+  }
+
+  getServiceKittenAdoptedKitens(): Kitten[] {
+    return this.kittenService.getAdoptedKittens();
+  }
+
+  ngOnInit() {
+    this.getServiceKittenJsonKittens();
+    this.kittenService.getAdoptedKittens();
   }
 
 }

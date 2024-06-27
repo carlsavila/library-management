@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { Kitten } from '../../../model/kitten/kitten';
 import { KittenComponent } from '../../../components/kitten/kitten.component';
+import { KittensComponent } from '../../kittens/kittens.component';
 
 @Component({
   selector: 'app-user',
@@ -13,10 +14,7 @@ export class UserComponent {
 
   // List to welcome adopted kitten by user.
   @Input()
-  userAdoptedKittenList!: Kitten[];
+  userAdoptedKittens: Kitten[] = [];
 
-  // temporary kitten for verication
-  @Input()
-  kittenFromKittenList!: Kitten;
-
+  constructor() { }
 }
