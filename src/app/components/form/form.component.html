@@ -26,7 +26,7 @@
     </div>
     <!--Lastname/Breed-->
     <fieldset>
-        <label for="lname">Nom </label>
+        <label for="lname">Nom/Race </label>
         <input id="lname" name="lname" type="text" [(ngModel)]="u_lastname" #lname="ngModel" required minlength="2"
             maxlength="20" placeholder="Nom/Race">
     </fieldset>
@@ -41,9 +41,9 @@
     <!--sex-->
     <fieldset>
         <legend>Sexe </legend>
-        <label for="male">masculin</label>
+        <label for="male">Homme/Mâle</label>
         <input id="male" type="radio" name="radio" value="male" [(ngModel)]="u_sex" #user_sex="ngModel" />
-        <label for="female">féminin</label>
+        <label for="female">Femme/Femelle</label>
         <input id="female" type="radio" name="radio" value="female" [(ngModel)]="u_sex" #user_sex="ngModel" />
         <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten race -->
         <div *ngIf="user_sex.errors, elseQuantity">

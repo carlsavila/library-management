@@ -1,8 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Kitten } from '../../model/kitten/kitten';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { table } from 'console';
+
 
 @Injectable({
   providedIn: 'root'

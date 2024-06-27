@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { KittensService } from '../../service/service/kittens.service';
+import { KittensService } from '../../service/kittens/kittens.service';
 import { Kitten } from '../../model/kitten/kitten';
 import { KittenComponent } from '../../components/kitten/kitten.component';
 import { NewkittenComponent } from '../../components/newkitten/newkitten/newkitten.component';
