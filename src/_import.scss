@@ -1,55 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
 
-$mainColor: #b23a86;
+:root {
+     // styles /
+     --global-font: Gothic A1;
+     --body-bg: white;
+     --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
+     --body-HeaderMainFooter-bg: white;
+     --h1h2-color: var(global-bsdw-color); //rgb(92, 190, 6);
+     --h3h4-color: rgb(76, 157, 4);
+     --dfn-color: rgb(82, 88, 77);
 
-/* styles */
-$global-font: Gothic A1;
-$body-bg: rgb(253, 245, 230);
-$global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
-$body-HeaderMainFooter-bg: oldlace;
-$h1h2-color: rgb(92, 190, 6);
-$h3h4-color: rgb(76, 157, 4);
-$dfn-color: rgb(82, 88, 77);
+     // List cards container/
+     --list-CardsContainer-bg-color: white;
+     --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-/*List cards container*/
-$list-CardsContainer-bg-color: rgb(253, 245, 230);
-$list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     // Form /
+     --form_boder: 1px solid #ccc;
+     // form-kitten /
+     --bnt-dbled-color: grey;
+     --bnt-dbled-bg-color: antiquewhite;
+     --bnt-ebled-color: antiquewhite;
+     --bnt-ebled-bg-color: green;
+     // Alertes /
+     --msgColorAlert: orange;
+     --msgColorValid: green;
 
-/* Form */
-$form_boder: 1px solid #ccc;
-/* form-kitten */
-$bnt-dbled-color: grey;
-$bnt-dbled-bg-color: antiquewhite;
-$bnt-ebled-color: antiquewhite;
-$bnt-ebled-bg-color: green;
-/* Alertes */
-$msgColorAlert: orange;
-$msgColorValid: green;
+     // KittenCard /
+     --kittenCard_bx-shdow: 2px 2px 50px 10px #ccc;
+     --kittenCard-pem: rgb(176, 45, 73);
 
-/* KittenCard */
-$kittenCard_bx-shdow: 2px 2px 50px 10px rgb(245, 236, 161);
-$kittenCard-pem: rgb(176, 45, 73);
+     // Borders to  DEBUG /
+     --index-body-border: 3px dotted magenta;
+     --body-sections: 4px dotted red; //#ccc;
+     --header-border: 5px solid rgb(30, 255, 0);
+     --menu-border: 6px dashed rgb(63, 87, 164);
 
-/** Borders to  DEBUG **/
-$body-sections: 3px dotted red;
-$grid-areas: 5px dotted green;
-$main-grid-areas-items: 3px dotted blue;
-$main-grid-areas-items-container: 3px dotted orangered;
-$main-grid-areas-items-cards-container: 3px dotted grey;
-$main-grid-areas-items-container-hover: 5px dotted rgb(169, 237, 177);
+     --grid-areas: .1px dotted #4e59ae; //green;
+     --main-grid-areas-items: .1px dotted #ccc; //blue;
+     --main-grid-areas-items-container: .1px dotted #ccc; //orangered;
+     --main-grid-areas-items-cards-container: .1px dotted #ccc; //grey;
+     --main-grid-areas-items-container-hover: .1px dotted #ccc; //rgb(169, 237, 177);
 
-$header-border: var($body-sections);
-$main-grid-container-border: var($body-sections);
-$grid-itemList: var($grid-areas);
-$grid-itemList-CardsContainer-boder: var($main-grid-areas-items);
-$grid-itemList-CardContainer: var($main-grid-areas-items-container);
-$grid-itemList-CardContainer-hover: var($main-grid-areas-items-container-hover);
-$grid-itemUser: var($grid-areas);
-$grid-itemUser-UserKittens-Container: var($main-grid-areas-items);
-$grid-itemUser-kittenList-Container: var($main-grid-areas-items-container);
-$grid-itemUser-kittenCard-Container: var($main-grid-areas-items-cards-container);
-$grid-itemUser-kittenCard-Container-hover: var($main-grid-areas-items-container-hover);
-$grid-itemForm : var($grid-areas);
-$footer: var($body-sections);
+     --main-grid-container-border: var(--body-sections);
+     --grid-itemList: var(--grid-areas);
+     --grid-itemList-CardsContainer-boder: var(--main-grid-areas-items);
+     --grid-itemList-CardContainer: var(--main-grid-areas-items-container);
+     --grid-itemList-CardContainer-hover: var(--main-grid-areas-items-container-hover);
+     --grid-itemUser: var(--grid-areas);
+     --grid-itemUser-UserKittens-Container: var(--main-grid-areas-items);
+     --grid-itemUser-kittenList-Container: var(--main-grid-areas-items-container);
+     --grid-itemUser-kittenCard-Container: var(--main-grid-areas-items-cards-container);
+     --grid-itemUser-kittenCard-Container-hover: var(--main-grid-areas-items-container-hover);
+     --grid-itemForm: var(--grid-areas);
+     --footer: var(--body-sections);
 
-$kittenCard: 3px dotted magenta;
+     --kittenCard: var(--body-sections);
+ }

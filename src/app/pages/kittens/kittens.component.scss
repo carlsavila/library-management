@@ -4,9 +4,8 @@
     background-color: var(--body-HeaderMainFooter-bg);
     padding: 0;
     margin: 0;
-
     
-    //border: var(--main-grid-container-border); // For DEBUGGING pourpose. to remove
+    border: var(--main-grid-container-border); // For DEBUGGING pourpose. to remove
     //border: .1px solid greenyellow; // For DEBUGGING pourpose. to remove
 
     /* List Available Kitten */
@@ -82,6 +81,8 @@
         border-radius: 1px;
 
         border: var(--grid-itemForm);
+
+        // For DEBUGGING pourpose. to remove
         border: 5px solid greenyellow;
     }
 }
@@ -270,6 +271,8 @@
             'list list user'
             'list list user'
             'form form user';
+
+        // For DEBUGGING pourpose. to remove
         border: 5px solid green;
 
         // section grid LIST available KITTENS //
@@ -282,6 +285,7 @@
             width: 600px;
             height: 100%;
 
+            // For DEBUGGING pourpose. to remove
             border: 5px solid yellowgreen;
 
             .grid-itemList-CardsContainer {
@@ -297,6 +301,7 @@
                     width: 100%;
                     max-width: 22rem;
 
+                    // For DEBUGGING pourpose. to remove
                     border: 5px solid dodgerblue;
                 }
 
@@ -315,6 +320,7 @@
             width: 200px;
             height: 100%;
 
+            // For DEBUGGING pourpose. to remove
             border: 5px solid red;
 
             .grid-itemUser-UserKittens-Container {
@@ -333,12 +339,10 @@
                         padding: .5px;
                         width: 100%;
                         max-width: 22rem;
-
                     }
                 }
             }
         }
-
         /* end list */
 
         // section grid FORME ADD A KITTEN //

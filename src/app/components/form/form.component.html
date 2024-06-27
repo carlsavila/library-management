@@ -67,7 +67,7 @@
     <!-- Picture -->
     <fieldset>
         <label for="kitten-picture">Photo </label>
-        <input id="kitten-picture" name="kitten-picture" type="file" [(ngModel)]="u_picture" #pictureKitten="ngModel"
+        <input id="kitten-picture" name="kitten-picture" type="text" [(ngModel)]="u_picture" #pictureKitten="ngModel"
             required>
         <!-- Vérification and Message d'erreurs de contact -->
         <div *ngIf="pictureKitten.errors,  elseContact"><em *ngIf="pictureKitten.errors?.['required']"
