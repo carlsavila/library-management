@@ -1,62 +1,5 @@
  @use "./import" as *;
 
- :root {
-     // styles /
-     --global-font: Gothic A1;
-     --body-bg: white;
-     --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
-     --body-HeaderMainFooter-bg: white;
-     --h1h2-color: var(global-bsdw-color); //rgb(92, 190, 6);
-     --h3h4-color: rgb(76, 157, 4);
-     --dfn-color: rgb(82, 88, 77);
-
-     // List cards container/
-     --list-CardsContainer-bg-color: white;
-     --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-     // Form /
-     --form_boder: 1px solid #ccc;
-     // form-kitten /
-     --bnt-dbled-color: grey;
-     --bnt-dbled-bg-color: antiquewhite;
-     --bnt-ebled-color: antiquewhite;
-     --bnt-ebled-bg-color: green;
-     // Alertes /
-     --msgColorAlert: orange;
-     --msgColorValid: green;
-
-     // KittenCard /
-     --kittenCard_bx-shdow: 2px 2px 50px 10px #ccc;
-     --kittenCard-pem: rgb(176, 45, 73);
-
-     // Borders to  DEBUG /
-     --body-sections: 1px solid red; //#ccc;
-     --header-border: var(--body-sections);
-     --menu-border: var(--body-sections);
-
-     --grid-areas: .1px dotted #ccc; //green;
-     --main-grid-areas-items: .1px dotted #ccc; //blue;
-     --main-grid-areas-items-container: .1px dotted #ccc; //orangered;
-     --main-grid-areas-items-cards-container: .1px dotted #ccc; //grey;
-     --main-grid-areas-items-container-hover: .1px dotted #ccc; //rgb(169, 237, 177);
-
-     --main-grid-container-border: var(--body-sections);
-     --grid-itemList: var(--grid-areas);
-     --grid-itemList-CardsContainer-boder: var(--main-grid-areas-items);
-     --grid-itemList-CardContainer: var(--main-grid-areas-items-container);
-     --grid-itemList-CardContainer-hover: var(--main-grid-areas-items-container-hover);
-     --grid-itemUser: var(--grid-areas);
-     --grid-itemUser-UserKittens-Container: var(--main-grid-areas-items);
-     --grid-itemUser-kittenList-Container: var(--main-grid-areas-items-container);
-     --grid-itemUser-kittenCard-Container: var(--main-grid-areas-items-cards-container);
-     --grid-itemUser-kittenCard-Container-hover: var(--main-grid-areas-items-container-hover);
-     --grid-itemForm: var(--grid-areas);
-     --footer: var(--body-sections);
-
-     --kittenCard: var(--body-sections);
- }
-
-
  * {
      padding: 0;
      margin: 0;
@@ -65,12 +8,15 @@
      font-size: inherit;
  }
 
- body {
+ .index-body {
      font-family: var(--global-font);
      background-color: var(--body-bg);
      box-shadow: var(--global-bsdw-color);
      margin: .1rem;
      padding: .1rem;
+
+     // for DEBUG purpose to be removed
+     border: var(--index-body-border);
 
      a,
      a:visited {
@@ -97,59 +43,48 @@
          color: var(--h3h4-color);
      }
 
-     header,
-     main,
-     footer {
+     .app-header,
+     .app-main,
+     .app-footer {
          max-width: 1200px;
          margin: 0 auto;
 
+         // for DEBUG purpose to be removed
          border: var(--body-sections);
      }
 
-     header {
+     .app-header {
          display: block;
          text-align: center;
          background-color: var(--body-HeaderMainFooter-bg);
          box-shadow: var(--global-bsdw-color);
-         padding: .5rem;
 
-         border: var(--header-border);
+         // for DEBUG purpose to be removed
+         border: var(--body-sections);
 
          // Header menu section //
-         header app-menu {
-             display: flex;
-             flex-direction: row;
-             justify-content: center;
-             align-items: center;
-             min-height: 12vh;
+         .app-header app-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            min-height: 12vh;
 
-             border: var(--menu-border);
+            // for DEBUG purpose to be removed
+            border: var(--menu-border);
          }
      }
 
      // Footer section //
-     main {
+     .app-main {
          display: flex;
          flex-direction: column;
          justify-content: center;
          align-items: center;
-         //height: calc(100vh - 10vh - 12vh);
      }
 
-
-     /*     
-        footer {
-        display: block;
-        text-align: center;
-        background-color: var(--body-HeaderMainFooter-bg);
-        box-shadow: var(--global-bsdw-color);
-        padding: .5rem;
-        margin: .2rem;
-        border: var(--footer);
-    } */
-
      // Footer section //
-     footer {
+     .app-footer {
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -172,7 +107,7 @@
  /* Extra small devices (phones, 600px and down) */
  /* Small devices (portrait tablets and large phones, 600px and up) */
  @media screen and (max-width: 600px) {
-     body {
+     .index-body {
          margin: .0 auto;
          padding: 0;
 
@@ -192,9 +127,8 @@
              font-size: .9rem;
          }
 
-         header {
-             padding: .1rem;
-             width: 99%;
+         .app-header {
+             width: 100%;
          }
      }
  }
@@ -202,15 +136,13 @@
  /* Medium devices (landscape tablets, 768px and up) */
  /* Large devices (laptops/desktops, 992px and up) */
  @media screen and (min-width: 601px) and (max-width: 992px) {
-     body {
+     .index-body {
          margin: .1rem auto;
          padding: .1rem;
      }
 
-     header {
-         padding: .1rem;
-         margin: .5rem;
-         width: 99%;
+     .app-header {
+         width: 100%;
      }
 
  }
@@ -218,16 +150,13 @@
  /* Large devices (laptops/desktops, 992px and up) */
  /* Extra large devices (large laptops and desktops, 1200px and up) */
  @media screen and (min-width: 992px) {
-     body {
+     .index-body {
          margin: .1rem auto;
          padding: .1rem;
          width: 992px;
      }
 
-     header {
-         padding: .1rem;
-         margin: .5rem;
-         width: 99%;
+     .app-header {
+         width: 100%;
      }
-
  }

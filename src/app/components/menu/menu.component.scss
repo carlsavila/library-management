@@ -8,12 +8,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-
 }
 
 .logo {
     width: 4rem;
-    border: .1px solid #333;
+    border: .1px solid #696969;
     border-radius: 1rem;
     padding: .1rem;
 }
@@ -48,7 +47,7 @@
         }
 
         .bar2 {
-            opacity: 0;
+            opacity: inherit; //0
         }
 
         .bar3 {

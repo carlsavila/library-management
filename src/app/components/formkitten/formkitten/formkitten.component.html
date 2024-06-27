@@ -42,7 +42,6 @@
         <em *ngIf="nameKitten.errors?.['maxlength']" class="msgColorAlert">La longueur maximale doit être inférieure à
             20</em>
     </div>
-    <!--<ng-template #elseTitle><em style="color: green; font-style: italic;">{{nameKitten.value}}</em></ng-template>-->
 
     <!--Champ Race-->
     <fieldset>
@@ -53,20 +52,17 @@
     <div *ngIf="raceKitten.errors, elseQuantity">
         <em *ngIf="raceKitten.errors?.['required']" class="msgColorAlert">Le champ Race est requis</em>
     </div>
-    <!--<ng-template #elseQuantity><em style="color: green; font-style: italic;">{{raceKitten.value}}</em></ng-template>-->
 
     <!--Champ date-order-->
     <fieldset>
         <label for="kitten-birthday-date">Date de naissance </label>
-        <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="kittenAge"
+        <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="kittenBirthDay"
             #birthdayDateKitten="ngModel" required>
     </fieldset>
     <!-- Vérification and Message d'erreurs de date -->
     <div *ngIf="birthdayDateKitten.errors, elseDate"><em *ngIf="birthdayDateKitten.errors?.['required']"
             class="msgColorAlert">Le champ date est requis</em>
     </div>
-    <!--<ng-template #elseDate><em
-                style="color: green; font-style: italic;">{{birthdayDateKitten.value}}</em></ng-template>-->
 
     <!--Champ contact-order-->
     <fieldset>
@@ -78,9 +74,6 @@
     <div *ngIf="pictureKitten.errors,  elseContact"><em *ngIf="pictureKitten.errors?.['required']"
             class="msgColorAlert">Le champ email est requis</em>
     </div>
-    <!--<ng-template #elseContact><em style="color: green; font-style: italic;">{{pictureKitten.value}}
-            </em>
-        </ng-template>-->
 
     <!--Boutons reset, submit -->
     <button type="reset">Effacer</button>

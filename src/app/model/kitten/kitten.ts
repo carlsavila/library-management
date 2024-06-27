@@ -6,7 +6,7 @@ export class Kitten {
         constructor(
             private _name: string,
             private readonly _breed: string,
-            private readonly _age: Date,
+            private readonly _birthday: Date,
             private _image: string,
         ) {
     
@@ -22,7 +22,7 @@ export class Kitten {
     
         get race(): string { return this._breed; }
     
-        get age(): Date { return this._age; }
+        get birthday(): Date { return this._birthday; }
     
         get image(): string { return this._image; }
         set image(u: string) { this._image = u; }
