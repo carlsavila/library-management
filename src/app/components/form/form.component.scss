@@ -3,22 +3,22 @@
 
 button [submit]:disabled,
 button[disabled] {
-    color: --bnt-dbled-color;
-    background-color: --bnt-dbled-bg-color;
+    color: var(--bnt-dbled-color);
+    background-color: var(--bnt-dbled-bg-color);
 }
 
 button[type="submit"]:enabled {
-    color: --bnt-ebled-color;
-    background-color: --bnt-ebled-bg-color;
+    color: var(--bnt-ebled-color);
+    background-color: var(--bnt-ebled-bg-color);
 }
 
 .msgColorAlert {
-    color: --msgColorAlert;
+    color: var(--msgColorAlert);
     font-style: italic;
 }
 
 .msgColorValid {
-    color: --msgColorValid;
+    color: var(--msgColorValid);
     font-style: italic;
 }
 
@@ -32,7 +32,7 @@ form {
     button {
         margin: .1rem;
         padding: .2rem;
-        border: --form_boder;
+        border: var(--form_boder);
         font-family: inherit;
     }
 

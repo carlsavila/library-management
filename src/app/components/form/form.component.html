@@ -11,7 +11,7 @@
             {{myForm.invalid}}.</em>
         }
     </div>
-    <!--Firstname/Name-->
+    <!-- Firstname/Name-->
     <fieldset>
         <label for="fname">Prénom/nom </label>
         <input id="fname" name="fname" type="text" [(ngModel)]="u_firstname" #fname="ngModel" required minlength="2"
@@ -24,7 +24,7 @@
         <em *ngIf="fname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
             20</em>
     </div>
-    <!--Lastname/Breed-->
+    <!-- Lastname/Breed-->
     <fieldset>
         <label for="lname">Nom/Race </label>
         <input id="lname" name="lname" type="text" [(ngModel)]="u_lastname" #lname="ngModel" required minlength="2"
@@ -38,7 +38,7 @@
             20</em>
     </div>
 
-    <!--sex-->
+    <!-- sex -->
     <fieldset>
         <legend>Sexe </legend>
         <label for="male">Homme/Mâle</label>
@@ -51,8 +51,7 @@
         </div>
     </fieldset>
 
-
-    <!--Birthday-->
+    <!-- Birthday -->
     <fieldset>
         <label for="kitten-birthday-date">Date de naissance </label>
         <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="u_birthday"
@@ -62,7 +61,6 @@
                 class="msgColorAlert">Le champ date est requis</em>
         </div>
     </fieldset>
-
 
     <!-- Picture -->
     <fieldset>
@@ -75,7 +73,7 @@
         </div>
     </fieldset>
 
-    <!--Boutons reset, submit -->
+    <!-- Boutons reset, submit -->
     <button type="reset">Effacer</button>
     <button type="submit" [disabled]="myForm.invalid" [ngClass]="btnStyle">Envoyer</button>
 </form>

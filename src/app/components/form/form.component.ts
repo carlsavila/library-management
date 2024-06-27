@@ -13,7 +13,6 @@ import { Person } from '../../model/person/person';
 })
 export class FormComponent {
 
-  
   u_firstname: string = "";
   u_lastname: string = "";
   u_sex: string = "";
@@ -32,8 +31,8 @@ export class FormComponent {
   // change Button color on submit
   btnStyle!: string;
   onSubmit(myForm: NgForm): void {
-    console.log("Submit du formulaire ajoute de l'utilisateur à la collection")
-    console.log("Le bouton du formulaire change de couleur pour montrer que le formulaire est valide");
+    console.log("DEBUG - Submit du formulaire ajoute de l'utilisateur à la collection")
+    console.log("DEBUG - Le bouton du formulaire change de couleur pour montrer que le formulaire est valide");
     this.newUser = new Person(
       this. u_firstname,
       this. u_lastname,
