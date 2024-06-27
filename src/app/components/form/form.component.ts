@@ -14,6 +14,7 @@ import { Kitten } from '../../model/kitten/kitten';
 })
 export class FormComponent {
 
+  // form inputs
   e_usrFName_aName: string = "";
   e_usrLName_aRace: string = "";
   e_usr_aSex: string = "";
@@ -25,7 +26,7 @@ export class FormComponent {
 
   // New user object to send to create-user login
   newUser?: Person;
-   // New kitten object to send to add to available kittens
+  // New kitten object to send to add to available kittens
   newKitten?: Kitten;
   // EventEmitter to register user login
   @Output()
@@ -37,6 +38,23 @@ export class FormComponent {
   // On submit, button color changes
   btnStyle!: string;
   isNewUser = false
+
+  // form labels
+  l_usrFName_aName: string = (this.isNewUser ? "Prénom " : "Nom");
+  l_usrLName_aRace: string = (this.isNewUser ? "Nom " : " Race");
+  l_usr_aMSex: string = (this.isNewUser ? "Homme" : "Mâle");
+  l_usr_aFSex: string = (this.isNewUser ? "Femme " : "Femelle");
+
+  // form placeholder
+  p_usrFName_aName: string = (this.isNewUser ? "notre prénom " : "son nom");
+  p_usrLName_aRace: string = (this.isNewUser ? "notre nom " : "sa race");
+  p_usr_aPicture: string = "un lien vers" + (this.isNewUser ? " votre photo " : " sa photo");
+
+  p_usrEmail: string = "notre email";
+  p_usrPassword: string = "notre mot de passe";
+  p_usrMobilNumber: string = "notre numéro de téléphone";
+
+  
   // Submit
   onSubmit(myForm: NgForm): void {
 

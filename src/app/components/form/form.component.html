@@ -13,9 +13,9 @@
     </div>
     <!-- Firstname/Name-->
     <fieldset>
-        <label for="fname">Prénom/nom </label>
+        <label for="fname">{{l_usrFName_aName}} </label>
         <input id="fname" name="fname" type="text" [(ngModel)]="e_usrFName_aName" #fname="ngModel" required minlength="2"
-            maxlength="20" placeholder="Prénom/Nom">
+            maxlength="20" placeholder="{{p_usrFName_aName}} ">
     </fieldset>
     <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
     <div *ngIf="fname.errors; elseTitle">
@@ -26,9 +26,9 @@
     </div>
     <!-- Lastname/Breed-->
     <fieldset>
-        <label for="lname">Nom/Race </label>
+        <label for="lname">{{l_usrLName_aRace}} </label>
         <input id="lname" name="lname" type="text" [(ngModel)]="e_usrLName_aRace" #lname="ngModel" required minlength="2"
-            maxlength="20" placeholder="Nom/Race">
+            maxlength="20" placeholder="{{p_usrLName_aRace}} ">
     </fieldset>
     <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
     <div *ngIf="lname.errors; elseTitle">
@@ -41,9 +41,9 @@
     <!-- sex -->
     <fieldset>
         <legend>Sexe </legend>
-        <label for="male">Homme/Mâle</label>
+        <label for="male">{{l_usr_aMSex}} </label>
         <input id="male" type="radio" name="radio" value="male" [(ngModel)]="e_usr_aSex" #user_sex="ngModel" />
-        <label for="female">Femme/Femelle</label>
+        <label for="female">{{l_usr_aFSex}} </label>
         <input id="female" type="radio" name="radio" value="female" [(ngModel)]="e_usr_aSex" #user_sex="ngModel" />
         <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten race -->
         <div *ngIf="user_sex.errors, elseQuantity">
@@ -66,7 +66,7 @@
     <fieldset>
         <label for="kitten-picture">Photo </label>
         <input id="kitten-picture" name="kitten-picture" type="text" [(ngModel)]="e_usr_aPicture" #pictureKitten="ngModel"
-            required>
+            required placeholder="{{p_usr_aPicture}} ">
         <!-- Vérification and Message d'erreurs de contact -->
         <div *ngIf="pictureKitten.errors,  elseContact"><em *ngIf="pictureKitten.errors?.['required']"
                 class="msgColorAlert">le champ image est requis</em>
