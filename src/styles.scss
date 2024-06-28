@@ -15,7 +15,7 @@
      margin: .1rem;
      padding: .1rem;
 
-     // for DEBUG purpose to be removed
+     // for DEBUG purpose (Sartre modus) to be removed
      border: var(--index-body-border);
 
      a,
@@ -49,7 +49,7 @@
          max-width: 1200px;
          margin: 0 auto;
 
-         // for DEBUG purpose to be removed
+         // for DEBUG purpose (Sartre modus) to be removed
          border: var(--body-sections);
      }
 
@@ -59,7 +59,7 @@
          background-color: var(--body-HeaderMainFooter-bg);
          box-shadow: var(--global-bsdw-color);
 
-         // for DEBUG purpose to be removed
+         // for DEBUG purpose (Sartre modus) to be removed
          border: var(--body-sections);
 
          // Header menu section //
@@ -81,6 +81,8 @@
          flex-direction: column;
          justify-content: center;
          align-items: center;
+         height: auto;
+         min-height: 65vh;
      }
 
      // Footer section //
