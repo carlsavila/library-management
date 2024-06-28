@@ -10,5 +10,5 @@ import { MenuComponent } from './components/menu/menu/menu.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-17-project-kittens library';
+  title = 'angular-17-project-kittens-library';
 }
