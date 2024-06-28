@@ -54,7 +54,7 @@ export class FormComponent {
   p_usrPassword: string = "notre mot de passe";
   p_usrMobilNumber: string = "notre numéro de téléphone";
 
-  
+
   // Submit
   onSubmit(myForm: NgForm): void {
 
@@ -80,7 +80,7 @@ export class FormComponent {
         this.e_usrFName_aName,
         this.e_usrLName_aRace,
         this.e_usr_aBirthday,
-        this.e_usr_aSex,
+        this.e_usr_aPicture,
       );
 
       this.newKittenDataToEmit.emit(this.newKitten);
