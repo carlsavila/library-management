@@ -64,14 +64,14 @@
 
         // Header menu section //
         .app-header app-menu {
-           display: flex;
-           flex-direction: row;
-           justify-content: center;
-           align-items: center;
-           min-height: 12vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            min-height: 12vh;
 
-           // for DEBUG purpose to be removed
-           border: var(--menu-border);
+            // for DEBUG purpose to be removed
+            border: var(--menu-border);
         }
     }
 
@@ -81,7 +81,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 65vh;
     }
 
     // Footer section //
