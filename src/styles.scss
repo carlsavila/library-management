@@ -1,0 +1,162 @@
+@use "./import" as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+.index-body {
+    font-family: var(--global-font);
+    background-color: var(--body-bg);
+    box-shadow: var(--global-bsdw-color);
+    margin: .1rem;
+    padding: .1rem;
+
+    // for DEBUG purpose (Sartre modus) to be removed
+    border: var(--index-body-border);
+
+    a,
+    a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    ul li {
+        list-style: none;
+    }
+
+    h1,
+    h2 {
+        color: var(--h1h2-color);
+    }
+
+    h3,
+    h4 {
+        color: var(--h3h4-color);
+        padding: .5rem;
+    }
+
+    dfn {
+        color: var(--h3h4-color);
+    }
+
+    .app-header,
+    .app-main,
+    .app-footer {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        // for DEBUG purpose (Sartre modus)  to be removed
+        border: var(--body-sections);
+    }
+
+    .app-header {
+        display: block;
+        text-align: center;
+        background-color: var(--body-HeaderMainFooter-bg);
+        box-shadow: var(--global-bsdw-color);
+
+        // for DEBUG purpose (Sartre modus)  to be removed
+        border: var(--body-sections);
+
+        // Header menu section //
+        .app-header app-menu {
+           display: flex;
+           flex-direction: row;
+           justify-content: center;
+           align-items: center;
+           min-height: 12vh;
+
+           // for DEBUG purpose to be removed
+           border: var(--menu-border);
+        }
+    }
+
+    // Footer section //
+    .app-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // Footer section //
+    .app-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+
+        address,
+        ul,
+        small {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 5px;
+        }
+    }
+}
+
+/*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 600px) {
+    .index-body {
+        margin: .0 auto;
+        padding: 0;
+
+        h1 {
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        h4 {
+            font-size: .9rem;
+        }
+
+        .app-header {
+            width: 100%;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .index-body {
+        margin: .1rem auto;
+        padding: .1rem;
+    }
+
+    .app-header {
+        width: 100%;
+    }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 992px) {
+    .index-body {
+        margin: .1rem auto;
+        padding: .1rem;
+        width: 992px;
+    }
+
+    .app-header {
+        width: 100%;
+    }
+}
