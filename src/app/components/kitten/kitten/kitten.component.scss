@@ -1,3 +1,12 @@
+
+:root {
+    // KittenCard /
+    --kittenCard: 4px dotted red; // BKP (Sartre modus) to replace: #ccc;
+
+    --kittenCard_bx-shdow: 2px 2px 50px 10px #ccc;
+    --kittenCard-pem: rgb(176, 45, 73);
+}
+
 /* Kittend Card */
 .kittenCard {
     margin: .5rem;
@@ -38,6 +47,7 @@
 /* Medium devices (landscape tablets, 768px and up) */
 /* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 992px) {
+
     /* Kittend Card */
     .kittenCard {
         margin: .5rem;
@@ -79,6 +89,7 @@
 /* Large devices (laptops/desktops, 992px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
+
     /* Kittend Card */
     .kittenCard {
         margin: .5rem;

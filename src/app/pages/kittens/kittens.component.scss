@@ -1,10 +1,41 @@
+@use "../../../import";
+
+:root {
+
+    // List cards container/
+    --list-CardsContainer-bg-color: white;
+    --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    // kittens
+    --grid-areas: .1px dotted #4e59ae; // BKP (Sartre modus) to replace: green;
+    --main-grid-areas-items: .1px dotted #ccc; // BKP (Sartre modus) to replace: blue;
+    --main-grid-areas-items-container: .1px dotted #ccc; // BKP (Sartre modus) to replace: orangered;
+    --main-grid-areas-items-cards-container: .1px dotted #ccc; // BKP (Sartre modus) to replace: grey;
+    --main-grid-areas-items-container-hover: .1px dotted #ccc; // BKP (Sartre modus) to replace: rgb(169, 237, 177);
+
+    --main-grid-container-border: var(--body-sections);
+    --grid-itemList: var(--grid-areas);
+    --grid-itemList-CardsContainer-boder: var(--main-grid-areas-items);
+    --grid-itemList-CardContainer: var(--main-grid-areas-items-container);
+    --grid-itemList-CardContainer-hover: var(--main-grid-areas-items-container-hover);
+    --grid-itemUser: var(--grid-areas);
+    --grid-itemUser-UserKittens-Container: var(--main-grid-areas-items);
+    --grid-itemUser-kittenList-Container: var(--main-grid-areas-items-container);
+    --grid-itemUser-kittenCard-Container: var(--main-grid-areas-items-cards-container);
+    --grid-itemUser-kittenCard-Container-hover: var(--main-grid-areas-items-container-hover);
+    --grid-itemForm: var(--grid-areas);
+    --footer: var(--body-sections);
+
+}
+
+
 /****** LIST in main ****/
 .main-grid-container {
     text-align: center;
     background-color: var(--body-HeaderMainFooter-bg);
     padding: 0;
     margin: 0;
-    
+
     border: var(--main-grid-container-border); // For DEBUGGING pourpose. to remove
     //border: .1px solid greenyellow; // For DEBUGGING pourpose. to remove
 
@@ -72,6 +103,7 @@
             }
         }
     }
+
     /* end list */
 
     /* Form grid */
@@ -88,84 +120,81 @@
 }
 
 
- /*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
- /* Extra small devices (phones, 600px and down) */
- /* Small devices (portrait tablets and large phones, 600px and up) */
- @media screen and (max-width: 600px) {
-        /** list **/
-        .main-grid-container {
-            display: grid;
-            grid-template-areas:
-                'list'
-                'user'
-                'form';
-            padding: .1rem;
-            margin: .1rem;
+/*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (max-width: 600px) {
 
-            .grid-itemList {
-                padding: 0;
-                display: grid;
-                grid-template-columns: 1fr;
+    /** list **/
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list'
+            'user'
+            'form';
+        padding: .1rem;
+        margin: .1rem;
+
+        .grid-itemList {
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-content: center;
+
+            .grid-itemList-CardsContainer {
+                display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-
-                .grid-itemList-CardsContainer {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .grid-itemList-CardContainer {
-                    padding: .5px;
-                    width: 12rem;
-                    max-width: 22rem;
-                }
             }
 
-            .grid-itemUser {
+            .grid-itemList-CardContainer {
+                padding: .5px;
+                width: 12rem;
+                max-width: 22rem;
+            }
+        }
+
+        .grid-itemUser {
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .grid-itemUser-UserKittens-Container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 padding: 0;
-                display: grid;
-                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
 
-                .grid-itemUser-UserKittens-Container {
+        /*end list*/
+
+        .grid-itemForm {
+            grid-area: form;
+            padding: .5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+
+            form {
+                fieldset {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    padding: 0;
-                    gap: 2px;
-                }
-            }
 
-            /*end list*/
-
-
-            .grid-itemForm {
-                grid-area: form;
-                padding: .5rem;
-                display: grid;
-                grid-template-columns: 1fr;
-
-                form {
-                    fieldset {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-
-                        input,
-                        label {
-                            width: 20rem;
-                        }
+                    input,
+                    label {
+                        width: 20rem;
                     }
                 }
             }
         }
-
-
-
     }
+}
 
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -343,6 +372,7 @@
                 }
             }
         }
+
         /* end list */
 
         // section grid FORME ADD A KITTEN //
