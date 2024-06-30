@@ -9,7 +9,8 @@ import { Animal } from '../../../model/animal/animal';
   styleUrl: './kitten.component.scss'
 })
 export class KittenComponent {
+
   @Input()
   kittenCard!: Animal;
-
+  
 }

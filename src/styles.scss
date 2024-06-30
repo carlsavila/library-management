@@ -13,9 +13,27 @@
     background-color: var(--body-bg);
     box-shadow: var(--global-bsdw-color);
     height: 50%;
+    max-width: 1200px;
+    margin: 0 auto;
 
     // for DEBUG purpose (Sartre modus) to be removed
     border: var(--index-body-border);
+
+    h1,
+    h2 {
+        color: var(--h1h2-color);
+        margin: 0.5rem 0 1.5rem;
+    }
+
+    h3,
+    h4 {
+        color: var(--h3h4-color);
+        padding: .5rem;
+    }
+
+    p {
+        text-align: center;
+      }
 
     a,
     a:visited {
@@ -23,19 +41,11 @@
         text-decoration: none;
     }
 
-    ul, 
+    ul,
     li {
         list-style: none;
     }
-    h1,
-    h2 {
-        color: var(--h1h2-color);
-    }
-    h3,
-    h4 {
-        color: var(--h3h4-color);
-        padding: .5rem;
-    }
+
 
     dfn {
         color: var(--h3h4-color);
@@ -54,12 +64,15 @@
         h1 {
             font-size: 1.2rem;
         }
+
         h2 {
             font-size: 1.1rem;
         }
+
         h3 {
             font-size: 1rem;
         }
+
         h4 {
             font-size: .9rem;
         }
