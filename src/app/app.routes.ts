@@ -14,7 +14,6 @@ export const routes: Routes = [
   {    path: 'connexion',    component: SigninComponent,  },
   {    path: 'inscription',    component: SignupComponent,  },
   {    path: 'contact',    component: ContactComponent,  },
-  {    path: 'apropos',    component: AboutComponent,  },
-  
+  {    path: 'apropos',    component: AboutComponent,  },  
   {    path: '', redirectTo: '/accueil', pathMatch: 'full',  },
 ];
