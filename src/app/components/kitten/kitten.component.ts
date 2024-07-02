@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Animal } from '../../../model/animal/animal';
+import { Animal } from '../../model/animal/animal';
+
 
 @Component({
   selector: 'app-kitten',

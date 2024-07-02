@@ -1,27 +1,20 @@
-/****** LIST in main ****/
+
 .main-grid-container {
     text-align: center;
     background-color: var(--body-HeaderMainFooter-bg);
     padding: 0;
     margin: 0;
     
-    border: var(--main-grid-container-border); // For DEBUGGING pourpose. to remove
-    //border: .1px solid greenyellow; // For DEBUGGING pourpose. to remove
+    border: var(--main-grid-container-border);
 
-    /* List Available Kitten */
+
     .grid-itemList {
         box-shadow: var(--global-bsdw-color);
         border-radius: 10px;
 
-        //border: var(--grid-itemList); // For DEBUGGING pourpose. to remove
-        //border: 5px solid fuchsia; // For DEBUGGING pourpose. to remove
-
         .grid-itemList-CardsContainer {
             border-radius: 10px;
             background-color: var(--list-CardsContainer-bg-color);
-
-            //border: var(--grid-itemList-CardsContainer-boder); // For DEBUGGING pourpose. to remove
-            //border: 5px solid greenyellow; // For DEBUGGING pourpose. to remove
 
             .grid-itemList-CardContainer {
                 border-radius: 10px;
@@ -39,7 +32,7 @@
         }
     }
 
-    /* User Kitten List */
+
     .grid-itemUser {
         background-color: var(--body-hmf-bg);
         box-shadow: var(--global-bsdw-color);
@@ -72,9 +65,7 @@
             }
         }
     }
-    /* end list */
 
-    /* Form grid */
     .grid-itemForm {
         background-color: var(--body-hmf-bg);
         box-shadow: var(--global-bsdw-color);
@@ -82,17 +73,11 @@
 
         border: var(--grid-itemForm);
 
-        // For DEBUGGING pourpose. to remove
         border: 5px solid greenyellow;
     }
 }
 
-
- /*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
- /* Extra small devices (phones, 600px and down) */
- /* Small devices (portrait tablets and large phones, 600px and up) */
  @media screen and (max-width: 600px) {
-        /** list **/
         .main-grid-container {
             display: grid;
             grid-template-areas:
@@ -138,9 +123,6 @@
                 }
             }
 
-            /*end list*/
-
-
             .grid-itemForm {
                 grid-area: form;
                 padding: .5rem;
@@ -168,12 +150,8 @@
     }
 
 
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 992px) {
 
-    /** liste **/
-    /* On screens that are 600px or less, set the background color to olive */
     .main-grid-container {
         display: grid;
         grid-template-areas:
@@ -234,7 +212,6 @@
             }
         }
 
-        /*end list*/
         .grid-itemForm {
             grid-area: form;
             padding: .5rem;
@@ -259,12 +236,8 @@
 
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
 
-    /** List **/
-    // main grid LIST available KITTENS/USER4 KITTENS/FORM NEW KITTEN //
     .main-grid-container {
         display: grid;
         grid-template-areas:
@@ -272,12 +245,9 @@
             'list list user'
             'form form user';
 
-        // For DEBUGGING pourpose. to remove
         border: 5px solid green;
 
-        // section grid LIST available KITTENS //
         .grid-itemList {
-            //padding: .5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -285,7 +255,6 @@
             width: 600px;
             height: 100%;
 
-            // For DEBUGGING pourpose. to remove
             border: 5px solid yellowgreen;
 
             .grid-itemList-CardsContainer {
@@ -301,14 +270,12 @@
                     width: 100%;
                     max-width: 22rem;
 
-                    // For DEBUGGING pourpose. to remove
                     border: 5px solid dodgerblue;
                 }
 
             }
         }
 
-        // section grid USER'S KITTENS //
         .grid-itemUser {
             grid-area: user;
             padding: .1rem;
@@ -320,7 +287,6 @@
             width: 200px;
             height: 100%;
 
-            // For DEBUGGING pourpose. to remove
             border: 5px solid red;
 
             .grid-itemUser-UserKittens-Container {
@@ -343,9 +309,7 @@
                 }
             }
         }
-        /* end list */
 
-        // section grid FORME ADD A KITTEN //
         .grid-itemForm {
             grid-area: form;
             padding: .5rem;
