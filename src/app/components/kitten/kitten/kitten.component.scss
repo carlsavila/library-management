@@ -35,10 +35,8 @@
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
+
 @media screen and (min-width: 601px) and (max-width: 992px) {
-    /* Kittend Card */
     .kittenCard {
         margin: .5rem;
         box-shadow: var(--kittenCard_bx-shdow);
@@ -76,10 +74,7 @@
     }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
-    /* Kittend Card */
     .kittenCard {
         margin: .5rem;
         box-shadow: var(--kittenCard_bx-shdow);

@@ -12,7 +12,6 @@ export class Animal {
 
         Animal.addKittNumber();
         this._id = Animal.getKittNumber();
-        console.log("compteur : " + Animal.getKittNumber() +  ". id "+  this.name + " " + this.id);
     }
 
     get id(): number { return this._id; }
