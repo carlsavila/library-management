@@ -1,0 +1,113 @@
+
+.kittenCard {
+    margin: .5rem;
+    box-shadow: var(--kittenCard_bx-shdow);
+    border-radius: 1% 30% 50% 70%;
+    width: 10rem;
+    height: 100%;
+    border: var(--kittenCard);
+
+    img {
+        border: 1px;
+        border-radius: 1% 30% 50% 90%;
+        width: 100%;
+    }
+
+    span {
+        visibility: hidden;
+        font-size: .2rem;
+    }
+
+    img:hover {
+        width: 20rem;
+        transition: width 5s linear 0;
+    }
+
+    :hover+span {
+        width: 20rem;
+        visibility: visible;
+        font-size: 1rem;
+    }
+
+    .pem {
+        color: var(--kittenCard-pem);
+        font-weight: bold;
+    }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    .kittenCard {
+        margin: .5rem;
+        box-shadow: var(--kittenCard_bx-shdow);
+        border-radius: 1% 30% 50% 70%;
+        width: 10rem;
+        height: 100%;
+        border: var(--kittenCard);
+
+        img {
+            border: 1px;
+            border-radius: 1% 30% 50% 90%;
+            width: 100%;
+        }
+
+        span {
+            visibility: hidden;
+            font-size: .2rem;
+        }
+
+        img:hover {
+            width: 20rem;
+            transition: width 5s linear 0;
+        }
+
+        :hover+span {
+            width: 20rem;
+            visibility: visible;
+            font-size: 1rem;
+        }
+
+        .pem {
+            color: var(--kittenCard-pem);
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .kittenCard {
+        margin: .5rem;
+        box-shadow: var(--kittenCard_bx-shdow);
+        border-radius: 1% 30% 50% 70%;
+        width: 10rem;
+        height: 100%;
+        border: var(--kittenCard);
+
+        img {
+            border: 1px;
+            border-radius: 1% 30% 50% 90%;
+            width: 100%;
+        }
+
+        span {
+            visibility: hidden;
+            font-size: .2rem;
+        }
+
+        img:hover {
+            width: 20rem;
+            transition: width 5s linear 0;
+        }
+
+        :hover+span {
+            width: 20rem;
+            visibility: visible;
+            font-size: 1rem;
+        }
+
+        .pem {
+            color: var(--kittenCard-pem);
+            font-weight: bold;
+        }
+    }
+}

@@ -5,13 +5,11 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: inherit;
-  height: inherit;
+  height: 78vh;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-h1,
-h2,
 p {
   text-align: center;
 }

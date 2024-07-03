@@ -1,1 +1,19 @@
-<p>kittens works!</p>
+<main class="main-grid-container">
+    <section class="grid-itemList">
+        <h1>Chatons disponibles</h1>
+        <div class="grid-itemList-CardsContainer">
+            @for (kitten of getServiceKittenAvailableKittens(); track $index) {
+            <div class="grid-itemList-CardContainer">
+                <div>
+                    <a (click)="addAdoptedKittenToUserKittenLis($index)">
+                        <app-kitten [kittenCard]="kitten"></app-kitten>
+                        <p><em>Un click </em>😁
+                            <em> et je suis à toi</em> 🥰💞💘
+                        </p>
+                    </a>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+</main>
