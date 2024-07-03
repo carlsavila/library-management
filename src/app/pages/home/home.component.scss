@@ -1,9 +1,5 @@
 @use "../../../import" as *;
 
-<<<<<<< HEAD
-:root {
-    --main-grid-container-border: var(--body-sections);
-=======
 section {
   display: flex;
   flex-direction: column;
@@ -12,28 +8,21 @@ section {
   height: 78vh;
   max-width: 1200px;
   margin: 0 auto;
->>>>>>> kittenservice
 }
 
 
-
-/****** LIST in main ****/
 .main-grid-container {
     text-align: center;
     background-color: var(--body-HeaderMainFooter-bg);
     padding: 0;
     margin: 0;
 
-    border: var(--main-grid-container-border); // For DEBUGGING pourpose. to remove
-    //border: .1px solid greenyellow; // For DEBUGGING pourpose. to remove
+    border: var(--main-grid-container-border);
 }
 
-/*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
+
 @media screen and (max-width: 600px) {
 
-    // grid //
     .main-grid-container {
         display: grid;
         grid-template-areas:
@@ -42,12 +31,9 @@ section {
             'form';
         padding: .1rem;
         margin: .1rem;
-
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 992px) {
 
     .main-grid-container {
@@ -58,11 +44,10 @@ section {
             'form';
     }
 }
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+
 @media screen and (min-width: 992px) {
 
-    // main grid LIST available KITTENS/USER4 KITTENS/FORM NEW KITTEN //
     .main-grid-container {
         display: grid;
         grid-template-areas:
@@ -70,7 +55,6 @@ section {
             'list list user'
             'form form user';
 
-        // For DEBUGGING pourpose. to remove
         border: 5px solid green;
     }
 }
