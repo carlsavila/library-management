@@ -4,13 +4,13 @@ import { KittenComponent } from '../kitten/kitten/kitten.component';
 import { KittensService } from '../../services/kittens.service';
 
 @Component({
-  selector: 'app-user',
+  selector: 'app-user-kittens',
   standalone: true,
   imports: [KittenComponent],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.scss'
+  templateUrl: './user-kittens.component.html',
+  styleUrl: './user-kittens.component.scss'
 })
-export class UserComponent {
+export class UserKittensComponent {
 
   userAdoptedKittens: Animal[] = [];
 

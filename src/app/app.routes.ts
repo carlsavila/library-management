@@ -6,7 +6,6 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
-import { UserComponent } from './components/user/user.component';
 
 export const routes: Routes = [
   {    path: 'accueil', component: HomeComponent, },
