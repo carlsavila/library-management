@@ -15,7 +15,6 @@ export class KittensService {
   private http = inject(HttpClient)
 
   getJsonKittensAndPushToAvailableKittens(): void {
-
     if (!this.isRead) {
       const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.json");
       jsonKittensObservable.subscribe((jsonResult) => {
