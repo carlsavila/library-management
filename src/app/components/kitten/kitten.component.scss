@@ -24,6 +24,13 @@
         font-size: .2rem;
     }
 
+    .btn-adopt {
+        border-radius: 10px;
+        background-color: var(--list-CardsContainer-bg-color);
+        box-shadow: var(--list-CardsContainer-bx-Shadow);
+        border-style: inherit;
+    }
+
     img:hover {
         width: 20rem;
         transition: width 5s linear 0;
@@ -41,6 +48,7 @@
     }
 
 }
+
 @media screen and (max-width: 992px) and (hover: hover) and (pointer: fine) {
     img:hover {
         width: 20rem;
