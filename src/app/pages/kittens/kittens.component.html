@@ -5,12 +5,15 @@
             @for (kitten of getServiceKittenAvailableKittens(); track $index) {
             <div class="grid-itemList-CardContainer">
                 <div>
-                    <a (click)="addAdoptedKittenToUserKittenLis($index)">
-                        <app-kitten [kittenCard]="kitten"></app-kitten>
-                        <p><em>Un click </em>😁
-                            <em> et je suis à toi</em> 🥰💞💘
-                        </p>
-                    </a>
+                    <app-kitten [kittenCard]="kitten"></app-kitten>
+                    <p>
+                        
+                            <a (click)="addAdoptedKittenToUserKittenLis($index)">
+                                <em>Un click </em>😁
+                                <em> et je suis à toi</em> 🥰💞💘
+                            </a>
+                        
+                    </p>
                 </div>
             </div>
             }
