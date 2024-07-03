@@ -1,7 +1,18 @@
 @use "../../../import" as *;
 
+<<<<<<< HEAD
 :root {
     --main-grid-container-border: var(--body-sections);
+=======
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+  max-width: 1200px;
+  margin: 0 auto;
+>>>>>>> kittenservice
 }
 
 
