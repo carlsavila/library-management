@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { KittensComponent } from '../kittens/kittens.component';
-import { UserKittensComponent } from '../../components/user-kittens/user-kittens.component';
+import { UserKittensComponent } from '../user-kittens/user-kittens.component';
 
 @Component({
   selector: 'app-home',

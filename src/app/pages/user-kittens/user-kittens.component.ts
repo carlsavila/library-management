@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { Animal } from '../../model/animal/animal';
-import { KittenComponent } from '../kitten/kitten.component';
+import { KittenComponent } from '../../components/kitten/kitten.component';
 import { KittensService } from '../../services/kittens.service';
 
 @Component({
