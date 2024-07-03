@@ -10,7 +10,6 @@
 
 }
 
-/* User Kitten List */
 .grid-itemUser {
     background-color: var(--body-hmf-bg);
     box-shadow: var(--global-bsdw-color);
@@ -43,15 +42,9 @@
         }
     }
 }
-/* end list */
 
-
-/*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
 
-    // USER section - user's kittens list //
     .grid-itemUser {
         padding: 0;
         display: grid;
@@ -66,11 +59,9 @@
             gap: 2px;
         }
     }
-    /*end list*/
+
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 991px) {
 
     .grid-itemUser {
@@ -86,23 +77,25 @@
             width: 100%;
 
             .grid-itemUser-kittenList-Container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 2px;
 
                 .grid-itemUser-kittenCard-Container {
                     padding: .5px;
                     width: 100%;
+
                     max-width: 22rem;
                 }
             }
         }
     }
-        /*end list*/
+
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+
 @media screen and (min-width: 992px) {
 
-    // section grid USER'S KITTENS //
     .grid-itemUser {
         grid-area: user;
         padding: .1rem;
@@ -114,7 +107,6 @@
         width: 200px;
         height: 100%;
 
-        // For DEBUGGING pourpose. to remove
         border: 5px solid red;
 
         .grid-itemUser-UserKittens-Container {
@@ -137,6 +129,5 @@
             }
         }
     }
-        /* end list */
 
 }

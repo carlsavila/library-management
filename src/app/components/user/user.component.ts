@@ -12,10 +12,8 @@ import { KittensService } from '../../services/kittens.service';
 })
 export class UserComponent {
 
-  // List to welcome adopted kitten by user.
   userAdoptedKittens: Animal[] = [];
 
-  // KittensService injection (to get, add available kittens and adopted user's kitten(s)).
   private kittenService: KittensService = inject(KittensService);
 
   getServiceKittenAdoptedKitten(): Animal[] {
