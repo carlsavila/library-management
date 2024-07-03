@@ -1,29 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
 
 :root {
-     // styles /
      --global-font: Gothic A1;
      --body-bg: white;
      --global-bsdw-color: rgba(17, 17, 26, 0.1) 0px 4px 16px 0px inset, rgba(17, 17, 26, 0.05) 0px 8px 32px 0px;
      --body-HeaderMainFooter-bg: white;
-     --h1h2-color: var(global-bsdw-color); // BKP (Sartre modus) to replace: rgb(92, 190, 6);
+     --h1h2-color: var(global-bsdw-color);
      --h3h4-color: rgb(76, 157, 4);
      --dfn-color: rgb(82, 88, 77);
 
-     // Form /
      --form_boder: 1px solid #ccc;
-     // form-kitten /
+
      --bnt-dbled-color: grey;
      --bnt-dbled-bg-color: antiquewhite;
      --bnt-ebled-color: antiquewhite;
      --bnt-ebled-bg-color: green;
-     // Alertes /
+
      --msgColorAlert: orange;
      --msgColorValid: green;
 
-     // Borders to  DEBUG /
+
      --index-body-border: 3px dotted magenta;
-     --body-sections: 4px dotted red; // BKP (Sartre modus) to replace: #ccc;
+     --body-sections: 4px dotted red;
      --header-border: 5px solid rgb(30, 255, 0);
      --menu-border: 6px dashed rgb(63, 87, 164);
 

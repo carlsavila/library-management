@@ -8,12 +8,12 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
-  {    path: 'home', component: HomeComponent, },
+  {    path: 'accueil', component: HomeComponent, },
   {    path: 'menu',    component: MenuComponent,  },
-  {    path: 'kittens',    component: KittensComponent,  },
-  {    path: 'signin',    component: SigninComponent,  },
-  {    path: 'signup',    component: SignupComponent,  },
+  {    path: 'chatons',    component: KittensComponent,  },
+  {    path: 'connexion',    component: SigninComponent,  },
+  {    path: 'inscription',    component: SignupComponent,  },
   {    path: 'contact',    component: ContactComponent,  },
-  {    path: 'about',    component: AboutComponent,  },
-  {    path: '', redirectTo: '/home', pathMatch: 'full',  },
+  {    path: 'apropos',    component: AboutComponent,  },
+  {    path: '', redirectTo: '/accueil', pathMatch: 'full',  },
 ];

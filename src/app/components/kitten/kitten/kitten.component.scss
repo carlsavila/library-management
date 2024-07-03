@@ -1,25 +1,23 @@
 
 :root {
-    // KittenCard /
-    --kittenCard: 4px dotted red; // BKP (Sartre modus) to replace: #ccc;
+    --kittenCard: 4px dotted red;
 
     --kittenCard_bx-shdow: 2px 2px 50px 10px #ccc;
     --kittenCard-pem: rgb(176, 45, 73);
 }
 
-/* Kittend Card */
 .kittenCard {
     margin: .5rem;
     box-shadow: var(--kittenCard_bx-shdow);
     border-radius: 1% 30% 50% 70%;
-    width: 10rem;
+    width: 100%;
     height: 100%;
     border: var(--kittenCard);
 
     img {
         border: 1px;
         border-radius: 1% 30% 50% 90%;
-        width: 100%;
+        width: 80%;
     }
 
     span {
@@ -44,16 +42,13 @@
     }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 992px) {
 
-    /* Kittend Card */
     .kittenCard {
         margin: .5rem;
         box-shadow: var(--kittenCard_bx-shdow);
         border-radius: 1% 30% 50% 70%;
-        width: 10rem;
+        width: 100%;
         height: 100%;
         border: var(--kittenCard);
 
@@ -86,23 +81,20 @@
     }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
 
-    /* Kittend Card */
     .kittenCard {
         margin: .5rem;
         box-shadow: var(--kittenCard_bx-shdow);
         border-radius: 1% 30% 50% 70%;
-        width: 10rem;
+        width: 100%;
         height: 100%;
         border: var(--kittenCard);
 
         img {
             border: 1px;
             border-radius: 1% 30% 50% 90%;
-            width: 100%;
+            width: 80%;
         }
 
         span {
@@ -110,15 +102,17 @@
             font-size: .2rem;
         }
 
-        img:hover {
-            width: 20rem;
-            transition: width 5s linear 0;
-        }
-
         :hover+span {
             width: 20rem;
             visibility: visible;
             font-size: 1rem;
+            transition: width 5s linear 0;
+            z-index: 1;
+        }
+        img:hover {
+            width: 20rem;
+            transition: all 5s linear 0;
+            transform: translate(-2.1rem, -5ex) scale(1.5);
         }
 
         .pem {

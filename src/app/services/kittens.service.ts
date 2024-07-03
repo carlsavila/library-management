@@ -7,34 +7,25 @@ import { Animal } from '../model/animal/animal';
 })
 export class KittensService {
 
-  // List available Kittens. 
   private AvailableKittens: Animal[] = [];
-  private jsonIsRead = false;
+  private isRead = false;
 
-  // List to manage user adopted  Kittens. 
   private userAdoptedKittens: Animal[] = [];
 
-  // HttpClient Service injection to read json
   private http = inject(HttpClient)
 
-  // Json Read
   getJsonKittensAndPushToAvailableKittens(): void {
-    // if not read
-    if (!this.jsonIsRead) {
-      // Json to read :
+
+    if (!this.isRead) {
       const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.json");
-      // With subscribe retrieve Kittens array
       jsonKittensObservable.subscribe((jsonResult) => {
-        // Json kittens result
         this.AvailableKittens = jsonResult;
-        // Json Kittens result on kittens
-        this.jsonIsRead = true;
+        this.isRead = true;
       });
     }
   }
 
   getAvailableKittens(): Animal[] {
-    // Available kittens
     return this.AvailableKittens;
   }
 
@@ -47,12 +38,10 @@ export class KittensService {
   }
 
   getAdoptedKittens(): Animal[] {
-    // Getting user's adopted kittens
     return this.userAdoptedKittens;
   }
 
   addAdoptedKitten(kitten: Animal) {
-    // Push adopted kitten
     this.userAdoptedKittens.push(kitten);
   }
 
