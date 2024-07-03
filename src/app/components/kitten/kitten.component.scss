@@ -42,36 +42,20 @@
 
 }
 
-@media screen and (max-width: 600px) {
+@media(hover: hover) and (pointer: fine) {
+    img:focus {
+        width: 20rem;
+        transition: width 5s linear 0;
+    }
 
-    body.nontouch {
-        img:focus {
-            width: 20rem;
-            transition: width 5s linear 0;
-        }
-
-        :focus+span {
-            width: 20rem;
-            visibility: visible;
-            font-size: 1rem;
-        }
+    :focus+span {
+        width: 20rem;
+        visibility: visible;
+        font-size: 1rem;
     }
 }
 
-@media screen and (min-width: 601px) and (max-width: 992px) {
-    body.nontouch {
-        img:focus {
-            width: 20rem;
-            transition: width 5s linear 0;
-        }
 
-        :focus+span {
-            width: 20rem;
-            visibility: visible;
-            font-size: 1rem;
-        }
-    }
-}
 
 @media screen and (min-width: 992px) {
     .kittenCard {
