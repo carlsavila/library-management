@@ -1,30 +1,21 @@
-<!-- AVAILABLE kittens section -->
-<section class="grid-itemList">
-    <h3>Chatons disponibles</h3>
 
-    <!--<button (click)="pushKittenForTest()"> ajouter</button>-->
-    <div class="grid-itemList-CardsContainer">
+    <section class="grid-itemList">
+        <h1>Chatons disponibles</h1>
 
-        @for (kitten of getServiceKittenAvailableKittens(); track $index) {
-        <div class="grid-itemList-CardContainer">
-            <div>
-                <a (click)="addAdoptedKittenToUserKittenLis($index)">
-                    <!-- Card @Input -->
-                    <app-kitten [kittenCard]="kitten"></app-kitten>
-                    <!-- Kitten message to show -->
-                    <p><em>Un click </em>😁
-                        <em> et je suis à toi</em> 🥰💞💘
-                    </p>
-                </a>
+        <div class="grid-itemList-CardsContainer">
+
+            @for (kitten of getServiceKittenAvailableKittens(); track $index) {
+            <div class="grid-itemList-CardContainer">
+                <div>
+                    <a (click)="addAdoptedKittenToUserKittenLis($index)">
+                        <app-kitten [kittenCard]="kitten"></app-kitten>
+                        <p><em>Un click </em>😁
+                            <em> et je suis à toi</em> 🥰💞💘
+                        </p>
+                    </a>
+                </div>
+
             </div>
-        </div>
         }
     </div>
 </section>
-
-
-<!-- FORM section - add new available kitten
-    <section class="grid-itemForm">
-        <app-newkitten (createKittenEmitter)="addNewAvailableKitten($event)">
-        </app-newkitten>
-    </section> -->

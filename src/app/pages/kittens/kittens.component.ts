@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { KittensService } from '../../services/kittens.service';
 import { Animal } from '../../model/animal/animal';
-import { KittenComponent } from '../../components/kitten/kitten/kitten.component';
+import { KittenComponent } from '../../components/kitten/kitten.component';
 
 @Component({
   selector: 'app-kittens',

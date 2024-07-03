@@ -1,75 +1,32 @@
-@use "../../../import";
+    .grid-itemList {
+        box-shadow: var(--global-bsdw-color);
 
-:root {
-    // List cards container/
-    --list-CardsContainer-bg-color: white;
-    --list-CardsContainer-bx-Shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    // kittens
-    --grid-areas: .1px dotted #4e59ae; // BKP (Sartre modus) to replace: green;
-    --main-grid-areas-items: .1px dotted #ccc; // BKP (Sartre modus) to replace: blue;
-    --main-grid-areas-items-container: .1px dotted #ccc; // BKP (Sartre modus) to replace: orangered;
-    --main-grid-areas-items-cards-container: .1px dotted #ccc; // BKP (Sartre modus) to replace: grey;
-    --main-grid-areas-items-container-hover: .1px dotted #ccc; // BKP (Sartre modus) to replace: rgb(169, 237, 177);
-
-    --grid-itemList: var(--grid-areas);
-    --grid-itemList-CardsContainer-boder: var(--main-grid-areas-items);
-    --grid-itemList-CardContainer: var(--main-grid-areas-items-container);
-    --grid-itemList-CardContainer-hover: var(--main-grid-areas-items-container-hover);
-    --footer: var(--body-sections);
-}
-
-/* List Available Kitten */
-.grid-itemList {
-    box-shadow: var(--global-bsdw-color);
-    border-radius: 10px;
-
-    //border: var(--grid-itemList); // For DEBUGGING pourpose. to remove
-    //border: 5px solid fuchsia; // For DEBUGGING pourpose. to remove
-
-    .grid-itemList-CardsContainer {
         border-radius: 10px;
         background-color: var(--list-CardsContainer-bg-color);
 
-        //border: var(--grid-itemList-CardsContainer-boder); // For DEBUGGING pourpose. to remove
-        //border: 5px solid greenyellow; // For DEBUGGING pourpose. to remove
-
-        .grid-itemList-CardContainer {
+        .grid-itemList-CardsContainer {
             border-radius: 10px;
             background-color: var(--list-CardsContainer-bg-color);
-            box-shadow: var(--list-CardsContainer-bx-Shadow);
+
+            .grid-itemList-CardContainer {
+                border-radius: 10px;
+                background-color: var(--list-CardsContainer-bg-color);
+                box-shadow: var(--list-CardsContainer-bx-Shadow);
+            }
+        }
+
+        .grid-itemList-CardContainer:hover {
+            width: 22rem;
+            height: fit-content;
+            box-shadow: var(--global-bsdw-color);
+            transition: all 1s linear;
+            border: var(--grid-itemList-CardContainer-hover);
         }
     }
 
-    .grid-itemList-CardContainer:hover {
-        width: 22rem;
-        height: fit-content;
-        box-shadow: var(--global-bsdw-color);
-        transition: all 1s linear;
-        border: var(--grid-itemList-CardContainer-hover);
-    }
-}
 
-
-/* Form grid */
-.grid-itemForm {
-    background-color: var(--body-hmf-bg);
-    box-shadow: var(--global-bsdw-color);
-    border-radius: 1px;
-
-    border: var(--grid-itemForm);
-
-    // For DEBUGGING pourpose. to remove
-    border: 5px solid greenyellow;
-}
-
-
-/*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
-/* Extra small devices (phones, 600px and down) */
-/* Small devices (portrait tablets and large phones, 600px and up) */
 @media screen and (max-width: 600px) {
 
-    /** list **/
     .grid-itemList {
         padding: 0;
         display: grid;
@@ -90,143 +47,66 @@
             max-width: 22rem;
         }
     }
-
-// Form section - Add available kitten to kittens list //
-    .grid-itemForm {
-        grid-area: form;
-        padding: .5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-
-        form {
-            fieldset {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                input,
-                label {
-                    width: 20rem;
-                }
-            }
-        }
-    }
 }
 
 
-/* Medium devices (landscape tablets, 768px and up) */
-/* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 601px) and (max-width: 992px) {
 
-    /** liste **/
-    /* On screens that are 600px or less, set the background color to olive */
-    .grid-itemList {
-        padding: .5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-
-        .grid-itemList-CardsContainer {
-            grid-area: list;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+        .grid-itemList {
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-items: center;
-            position: relative;
-            width: 100%;
+            justify-content: center;
 
-            .grid-itemList-CardContainer {
-                padding: .5px;
-                width: 100%;
-                max-width: 22rem;
-            }
 
-        }
-    }
-
-    .grid-itemForm {
-        grid-area: form;
-        padding: .5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-
-        form {
-            fieldset {
-                display: flex;
-                flex-direction: column;
+            .grid-itemList-CardsContainer {
+                grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
                 align-items: center;
-                justify-content: center;
+                justify-items: center;
+                position: relative;
+                width: 100%;
 
-                input,
-                label {
-                    width: 20rem;
+                .grid-itemList-CardContainer {
+                    padding: .5px;
+                    width: 100%;
+                    max-width: 22rem;
                 }
+
             }
         }
-    }
 }
 
-
-/* Large devices (laptops/desktops, 992px and up) */
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media screen and (min-width: 992px) {
-
-    /** List **/
-    // section grid LIST available KITTENS //
-    .grid-itemList {
-        //padding: .5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        width: 600px;
-        height: 100%;
-
-        // For DEBUGGING pourpose. to remove
-        border: 5px solid yellowgreen;
-
-        .grid-itemList-CardsContainer {
-            grid-area: list;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+        .grid-itemList {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-items: center;
-            position: relative;
-            width: 100%;
+            justify-content: center;
+            width: 600px;
+            height: 100%;
 
-            .grid-itemList-CardContainer {
-                width: 100%;
-                max-width: 22rem;
+            border: 5px solid yellowgreen;
 
-                // For DEBUGGING pourpose. to remove
-                border: 5px solid dodgerblue;
-            }
-        }
-    }
-
-    // section grid FORM ADD A KITTEN //
-    .grid-itemForm {
-        grid-area: form;
-        padding: .5rem;
-        display: grid;
-        grid-template-columns: 1fr;
-        width: 600px;
-
-        form {
-            fieldset {
-                display: flex;
-                flex-direction: column;
+            .grid-itemList-CardsContainer {
+                grid-area: list;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
                 align-items: center;
-                justify-content: center;
+                justify-items: center;
+                position: relative;
+                width: 100%;
 
-                input,
-                label {
-                    width: 20rem;
+                .grid-itemList-CardContainer {
+                    width: 100%;
+                    max-width: 22rem;
+
+                    border: 5px solid dodgerblue;
                 }
+
             }
         }
-    }
+
 }
