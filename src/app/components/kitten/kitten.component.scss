@@ -1,4 +1,3 @@
-
 :root {
     --kittenCard: 4px dotted red;
 
@@ -37,46 +36,39 @@
     }
 
     .pem {
-        color: var(--kittenCard-pem);
+        color: rgb(54, 113, 222);
         font-weight: bold;
     }
+
 }
 
-@media screen and (min-width: 601px) and (max-width: 992px) {
+@media screen and (max-width: 600px) {
 
-    .kittenCard {
-        margin: .5rem;
-        box-shadow: var(--kittenCard_bx-shdow);
-        border-radius: 1% 30% 50% 70%;
-        width: 100%;
-        height: 100%;
-        border: var(--kittenCard);
-
-        img {
-            border: 1px;
-            border-radius: 1% 30% 50% 90%;
-            width: 100%;
-        }
-
-        span {
-            visibility: hidden;
-            font-size: .2rem;
-        }
-
-        img:hover {
+    body.nontouch {
+        img:focus {
             width: 20rem;
             transition: width 5s linear 0;
         }
 
-        :hover+span {
+        :focus+span {
             width: 20rem;
             visibility: visible;
             font-size: 1rem;
         }
+    }
+}
 
-        .pem {
-            color: var(--kittenCard-pem);
-            font-weight: bold;
+@media screen and (min-width: 601px) and (max-width: 992px) {
+    body.nontouch {
+        img:focus {
+            width: 20rem;
+            transition: width 5s linear 0;
+        }
+
+        :focus+span {
+            width: 20rem;
+            visibility: visible;
+            font-size: 1rem;
         }
     }
 }
@@ -108,15 +100,12 @@
             transition: width 5s linear 0;
             z-index: 1;
         }
+
         img:hover {
             width: 20rem;
             transition: all 5s linear 0;
             transform: translate(-2.1rem, -5ex) scale(1.5);
         }
 
-        .pem {
-            color: var(--kittenCard-pem);
-            font-weight: bold;
-        }
     }
 }
