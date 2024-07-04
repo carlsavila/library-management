@@ -11,9 +11,9 @@
             <a class="rlink" routerLink="/accueil">Accueil</a>
         </li>
         <li class="llink">
-            <a class="rlink" routerLink="/connexion/">Connexion</a>
+            <a class="rlink" [routerLink]="['/connexion', formType]">Connexion</a>
         </li>
-        <a class="mobil" routerLink="/connexion">
+        <a class="mobil" [routerLink]="['/connexion', formType]">
             <ul class="container">
                 <li class="bar1"></li>
                 <li class="bar2"></li>

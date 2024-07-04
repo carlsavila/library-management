@@ -10,6 +10,6 @@ import { FormComponent } from '../form/form/form.component';
 })
 export class SigninupComponent {
 
-isPerson: boolean = true;
+formType: string = "utilisateur";
 
 }

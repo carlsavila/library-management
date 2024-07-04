@@ -10,7 +10,7 @@ export const routes: Routes = [
   {    path: 'accueil', component: HomeComponent, },
   {    path: 'menu',    component: MenuComponent,  },
   {    path: 'chatons',    component: KittensComponent,  },
-  {    path: 'connexion',    component: SigninupComponent,  },
+  {    path: 'connexion/:formtype',    component: SigninupComponent,  },
   {    path: 'contact',    component: ContactComponent,  },
   {    path: 'apropos',    component: AboutComponent,  },
   {    path: '', redirectTo: '/accueil', pathMatch: 'full',  },
