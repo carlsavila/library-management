@@ -16,7 +16,7 @@ export class UserkittensComponent {
 
   private kittenService: KittensService = inject(KittensService);
 
-  getServiceKittenAdoptedKitten(): Animal[] {
+  getAdoptedKittens(): Animal[] {
     return this.kittenService.getAdoptedKittens();
   }
 
