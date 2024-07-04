@@ -19,11 +19,10 @@ section {
     background-color: var(--body-HeaderMainFooter-bg);
     padding: 0;
     margin: 0;
-    min-width: max-content;
+    min-width: auto;
     min-height: 100vh;
 
-    //border: var(--main-grid-container-border);
-    border: 5px solid green;
+    border: 5px solid violet;
 
     .grid-itemUser {
       background-color: var(--body-hmf-bg);
