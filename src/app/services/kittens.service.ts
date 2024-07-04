@@ -16,7 +16,7 @@ export class KittensService {
 
   getJsonKittensAndPushToAvailableKittens(): void {
     if (!this.isRead) {
-      const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.json");
+      const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.");
       jsonKittensObservable.subscribe((jsonResult) => {
         this.AvailableKittens = jsonResult;
         this.isRead = true;

@@ -1,0 +1,132 @@
+@use "../../../import";
+
+:root {
+    --grid-itemUser: var(--grid-areas);
+    --grid-itemUser-UserKittens-Container: var(--main-grid-areas-items);
+    --grid-itemUser-kittenList-Container: var(--main-grid-areas-items-container);
+    --grid-itemUser-kittenCard-Container: var(--main-grid-areas-items-cards-container);
+    --grid-itemUser-kittenCard-Container-hover: var(--main-grid-areas-items-container-hover);
+    --grid-itemForm: var(--grid-areas);
+}
+
+.grid-itemUser {
+    background-color: var(--body-hmf-bg);
+    box-shadow: var(--global-bsdw-color);
+    border-radius: 1px;
+
+    .grid-itemUser-UserKittens-Container {
+        padding: .5rem;
+        margin: 2px;
+        background-color: var(--list-CardsContainer-bg-color);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border: var(--grid-itemUser-UserKittens-Container);
+
+        .grid-itemUser-kittenList-Container {
+            border-radius: 10px;
+            border: var(--grid-itemUser-kittenList-Container);
+
+            .grid-itemUser-kittenCard-Container {
+                border-radius: 10px;
+                border: var(--grid-itemUser-kittenCard-Container);
+            }
+
+            .grid-itemUser-kittenCard-Container:hover {
+                width: 22rem;
+                height: fit-content;
+                box-shadow: var(--global-bsdw-color);
+                transition: all 1s linear;
+                border: var(--grid-itemUser-kittenCard-Container-hover);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .grid-itemUser {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .grid-itemUser-UserKittens-Container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            gap: 2px;
+        }
+    }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+
+    .grid-itemUser {
+        grid-area: user;
+        padding: .1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .grid-itemUser-UserKittens-Container {
+            position: relative;
+            width: 100%;
+
+            .grid-itemUser-kittenList-Container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 2px;
+
+                .grid-itemUser-kittenCard-Container {
+                    padding: .5px;
+                    width: 100%;
+
+                    max-width: 22rem;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 992px) {
+
+    .grid-itemUser {
+        grid-area: user;
+        padding: .1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 200px;
+        height: 100%;
+
+        border: 5px solid red;
+
+        .grid-itemUser-UserKittens-Container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: inherit;
+
+            .grid-itemUser-kittenList-Container {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: center;
+                justify-items: center;
+
+                .grid-itemUser-kittenCard-Container {
+                    padding: .5px;
+                    width: 100%;
+                    max-width: 22rem;
+                }
+            }
+        }
+    }
+}

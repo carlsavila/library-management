@@ -1,19 +1,75 @@
 @use "../../../import" as *;
 
+:root {
+  --grid-itemUser: var(--grid-areas);
+}
+
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 78vh;
+  height: auto;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-p {
-  text-align: center;
+.main-grid-container {
+    text-align: center;
+    background-color: var(--body-HeaderMainFooter-bg);
+    padding: 0;
+    margin: 0;
+    min-width: max-content;
+    min-height: 100vh;
+
+    //border: var(--main-grid-container-border);
+    border: 5px solid green;
+
+    .grid-itemUser {
+      background-color: var(--body-hmf-bg);
+      box-shadow: var(--global-bsdw-color);
+      border-radius: 1px;
+      height: inherit;
+    }
+
 }
 
-h2 {
-  margin: 0.5rem 0 1.5rem;
+
+@media screen and (max-width: 600px) {
+
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list'
+            'user'
+            'form';
+        padding: .1rem;
+        margin: .1rem;
+        align-items: start;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 992px) {
+
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list'
+            'user'
+            'form';
+            align-items: start;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+
+    .main-grid-container {
+        display: grid;
+        grid-template-areas:
+            'list list user'
+            'list list user'
+            'form form user';
+            align-items: start;
+    }
 }

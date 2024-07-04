@@ -1,0 +1,16 @@
+
+<section class="grid-itemUser">
+
+    <div class="grid-itemUser-UserKittens-Container">
+    <h3>Section Utilisateur</h3>
+<dfn>Mes châtons</dfn>
+        <div class="grid-itemUser-kittenList-Container">
+            @for (kitten of getServiceKittenAdoptedKitten(); track $index) {
+            <div class="grid-itemUser-kittenCard-Container">
+                <app-kitten [kittenCard]="kitten"></app-kitten>
+            </div>
+            }
+        </div>
+
+    </div>
+</section>
