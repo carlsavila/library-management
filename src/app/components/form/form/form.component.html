@@ -38,6 +38,36 @@
             20</em>
     </div>
 
+    <!-- login/mot de passe-->
+    <!-- Champ email -->
+    <fieldset>
+        <label for="uemail">E-mail </label>
+        <input id="uemail" name="uemail" type="email" [(ngModel)]="e_usrEmail" #email="ngModel" required email>
+    </fieldset>
+    <!-- Vérification et message d'erreur, alerte couleur -->
+    <div *ngIf="email.errors">
+        <span *ngIf="email.errors?.['required']" class="msgColorAlert">Le champ email est requis</span>
+        <span *ngIf="email.errors?.['email']" class="msgColorAlert">L'adresse email doit être valide</span>
+    </div>
+
+
+    <!-- Champ Mot de passe -->
+    <fieldset>
+        <label for="upwd">Mot de passe </label>
+        <input id="upwd" name="upwd" type="password" [(ngModel)]="e_usrPassword" #password="ngModel" required
+            minlength="8">
+    </fieldset>
+
+    <!-- Vérification et message d'erreur, alerte couleur -->
+    <div *ngIf="password.errors">
+        <span *ngIf="password.errors?.['required']" class="msgColorAlert">Le champ mot de passe est requis</span>
+        <span *ngIf="password.errors?.['password']" class="msgColorAlert">Le mot de passe doit être valide</span>
+        <span *ngIf="password.errors?.['minlength']" class="msgColorAlert">La longueur minimale doit être supérieure
+            à
+            8</span>
+    </div>
+    <!-- fin login/mot de passe-->
+
     <!-- sex -->
     <fieldset>
         <legend>Sexe </legend>

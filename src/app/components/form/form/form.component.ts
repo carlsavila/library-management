@@ -33,11 +33,12 @@ export class FormComponent {
   // EventEmitter to add new kitten login
   @Output()
   newKittenDataToEmit: EventEmitter<Animal> = new EventEmitter();
+  
+  @Input()
+  isUser!:boolean;
 
   // On submit, button color changes
   btnStyle!: string;
-  @Input()
-  isUser:boolean=true;
 
   // form labels
   l_usrFName_aName: string = (this.isUser ? "Prénom " : "Nom");
@@ -46,18 +47,18 @@ export class FormComponent {
   l_usr_aFSex: string = (this.isUser ? "Femme " : "Femelle");
 
   // form placeholder
-  p_usrFName_aName: string = (this.isUser ? "notre prénom " : "son nom");
-  p_usrLName_aRace: string = (this.isUser ? "notre nom " : "sa race");
+  p_usrFName_aName: string = (this.isUser ? "votre prénom " : "son nom");
+  p_usrLName_aRace: string = (this.isUser ? "votre nom " : "sa race");
   p_usr_aPicture: string = "un lien vers" + (this.isUser ? " votre photo " : " sa photo");
 
-  p_usrEmail: string = "notre email";
-  p_usrPassword: string = "notre mot de passe";
-  p_usrMobilNumber: string = "notre numéro de téléphone";
+  p_usrEmail: string = "votre email";
+  p_usrPassword: string = "votre mot de passe";
+  p_usrMobilNumber: string = "votre numéro de téléphone";
 
 
   // Submit
   onSubmit(myForm: NgForm): void {
-
+    console.log("Boléan utilisateur ou non ", this.isUser);
     console.log("DEBUG - Submit du formulaire ajoute de élément à la collection")
     console.log("DEBUG - Le bouton du formulaire change de couleur pour montrer que le formulaire est valide");
 
