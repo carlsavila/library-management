@@ -27,7 +27,6 @@ export class KittensComponent {
   }
 
   addAdoptedKittenToUserKittenLis(kittenIndex: number) {
-
     this.kittenService.getAvailableKittens().find(
       (kittenItem, index) => {
 

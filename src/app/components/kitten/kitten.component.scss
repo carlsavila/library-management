@@ -1,21 +1,34 @@
+:root {
+    --kittenCard: 4px dotted red;
+
+    --kittenCard_bx-shdow: 2px 2px 50px 10px #ccc;
+    --kittenCard-pem: rgb(176, 45, 73);
+}
 
 .kittenCard {
     margin: .5rem;
     box-shadow: var(--kittenCard_bx-shdow);
     border-radius: 1% 30% 50% 70%;
-    width: 10rem;
+    width: 100%;
     height: 100%;
     border: var(--kittenCard);
 
     img {
         border: 1px;
         border-radius: 1% 30% 50% 90%;
-        width: 100%;
+        width: 80%;
     }
 
     span {
         visibility: hidden;
         font-size: .2rem;
+    }
+
+    .btn-adopt {
+        border-radius: 10px;
+        background-color: var(--list-CardsContainer-bg-color);
+        box-shadow: var(--list-CardsContainer-bx-Shadow);
+        border-style: inherit;
     }
 
     img:hover {
@@ -30,47 +43,22 @@
     }
 
     .pem {
-        color: var(--kittenCard-pem);
+        color: rgb(54, 113, 222);
         font-weight: bold;
     }
+
 }
 
+@media screen and (max-width: 992px) and (hover: hover) and (pointer: fine) {
+    img:hover {
+        width: 20rem;
+        transition: width 5s linear 0;
+    }
 
-@media screen and (min-width: 601px) and (max-width: 992px) {
-    .kittenCard {
-        margin: .5rem;
-        box-shadow: var(--kittenCard_bx-shdow);
-        border-radius: 1% 30% 50% 70%;
-        width: 10rem;
-        height: 100%;
-        border: var(--kittenCard);
-
-        img {
-            border: 1px;
-            border-radius: 1% 30% 50% 90%;
-            width: 100%;
-        }
-
-        span {
-            visibility: hidden;
-            font-size: .2rem;
-        }
-
-        img:hover {
-            width: 20rem;
-            transition: width 5s linear 0;
-        }
-
-        :hover+span {
-            width: 20rem;
-            visibility: visible;
-            font-size: 1rem;
-        }
-
-        .pem {
-            color: var(--kittenCard-pem);
-            font-weight: bold;
-        }
+    :hover+span {
+        width: 20rem;
+        visibility: visible;
+        font-size: 1rem;
     }
 }
 
@@ -79,14 +67,14 @@
         margin: .5rem;
         box-shadow: var(--kittenCard_bx-shdow);
         border-radius: 1% 30% 50% 70%;
-        width: 10rem;
+        width: 100%;
         height: 100%;
         border: var(--kittenCard);
 
         img {
             border: 1px;
             border-radius: 1% 30% 50% 90%;
-            width: 100%;
+            width: 80%;
         }
 
         span {
@@ -94,20 +82,19 @@
             font-size: .2rem;
         }
 
-        img:hover {
-            width: 20rem;
-            transition: width 5s linear 0;
-        }
-
         :hover+span {
             width: 20rem;
             visibility: visible;
             font-size: 1rem;
+            transition: width 5s linear 0;
+            z-index: 1;
         }
 
-        .pem {
-            color: var(--kittenCard-pem);
-            font-weight: bold;
+        img:hover {
+            width: 20rem;
+            transition: all 5s linear 0;
+            transform: translate(-2.1rem, -5ex) scale(1.5);
         }
+
     }
 }

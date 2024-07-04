@@ -12,8 +12,7 @@
     font-family: var(--global-font);
     background-color: var(--body-bg);
     box-shadow: var(--global-bsdw-color);
-    margin: .1rem;
-    padding: .1rem;
+    height: 50%;
 
     // for DEBUG purpose (Sartre modus) to be removed
     border: var(--index-body-border);
@@ -24,15 +23,14 @@
         text-decoration: none;
     }
 
-    ul li {
+    ul, 
+    li {
         list-style: none;
     }
-
     h1,
     h2 {
         color: var(--h1h2-color);
     }
-
     h3,
     h4 {
         color: var(--h3h4-color);
@@ -43,66 +41,6 @@
         color: var(--h3h4-color);
     }
 
-    .app-header,
-    .app-main,
-    .app-footer {
-        max-width: 1200px;
-        margin: 0 auto;
-
-        // for DEBUG purpose (Sartre modus)  to be removed
-        border: var(--body-sections);
-    }
-
-    .app-header {
-        display: block;
-        text-align: center;
-        background-color: var(--body-HeaderMainFooter-bg);
-        box-shadow: var(--global-bsdw-color);
-
-        // for DEBUG purpose (Sartre modus)  to be removed
-        border: var(--body-sections);
-
-        // Header menu section //
-        .app-header app-menu {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            min-height: 12vh;
-
-            // for DEBUG purpose to be removed
-            border: var(--menu-border);
-        }
-    }
-
-    // Footer section //
-    .app-main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        min-height: 65vh;
-    }
-
-    // Footer section //
-    .app-footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 10vh;
-
-        address,
-        ul,
-        small {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 5px;
-        }
-    }
 }
 
 /*** https://www.w3schools.com/css/css_rwd_mediaqueries.asp ***/
@@ -116,21 +54,14 @@
         h1 {
             font-size: 1.2rem;
         }
-
         h2 {
             font-size: 1.1rem;
         }
-
         h3 {
             font-size: 1rem;
         }
-
         h4 {
             font-size: .9rem;
-        }
-
-        .app-header {
-            width: 100%;
         }
     }
 }
@@ -142,11 +73,6 @@
         margin: .1rem auto;
         padding: .1rem;
     }
-
-    .app-header {
-        width: 100%;
-    }
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -156,9 +82,5 @@
         margin: .1rem auto;
         padding: .1rem;
         width: 992px;
-    }
-
-    .app-header {
-        width: 100%;
     }
 }
