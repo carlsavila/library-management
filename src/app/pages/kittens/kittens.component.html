@@ -1,6 +1,7 @@
 <main class="main-grid-container">
     <section class="grid-itemList">
         <h1>Chatons disponibles</h1>
+        <app-imageslider [slides]="slides" style="width: 350px; height: 350px; margin: 0 auto;"></app-imageslider>
         <div class="grid-itemList-CardsContainer">
             @for (kitten of getServiceKittenAvailableKittens(); track $index) {
             <div class="grid-itemList-CardContainer">
