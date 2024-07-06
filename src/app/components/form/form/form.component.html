@@ -1,5 +1,8 @@
 
 <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <button [disabled]="isSignin" [ngClass]="btnStyle" (click)="signOnUp()">{{btnSignIn}}</button>
+    <button [disabled]="!isSignin" [ngClass]="btnStyle"  (click)="signOnUp()">{{btnSignUp}}</button>
+
     <div>
         <!-- Form check -->
         @if (myForm.invalid) {
@@ -11,65 +14,73 @@
             {{myForm.invalid}}.</em>
         }
     </div>
+
     <!-- Firstname/Name-->
-    <fieldset>
+    <fieldset *ngIf="isSignin">
         <label for="fname">{{l_usrFName_aName}} </label>
-        <input id="fname" name="fname" type="text" [(ngModel)]="e_usrFName_aName" #fname="ngModel" required minlength="2"
-            maxlength="20" placeholder="{{p_usrFName_aName}} ">
+        <input id="fname" name="fname" type="text" [(ngModel)]="e_usrFName_aName" #fname="ngModel" required
+            minlength="2" maxlength="20" placeholder="{{p_usrFName_aName}} ">
+
+        <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
+        <div *ngIf="fname.errors; elseTitle">
+            <em *ngIf="fname.errors?.['required']" class="msgColorAlert">le champ titre est requis</em>
+            <em *ngIf="fname.errors?.['minlength']" class="msgColorAlert">la longueur minimale doit être supérieure à
+                2</em>
+            <em *ngIf="fname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
+                20</em>
+        </div>
     </fieldset>
-    <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
-    <div *ngIf="fname.errors; elseTitle">
-        <em *ngIf="fname.errors?.['required']" class="msgColorAlert">le champ titre est requis</em>
-        <em *ngIf="fname.errors?.['minlength']" class="msgColorAlert">la longueur minimale doit être supérieure à 2</em>
-        <em *ngIf="fname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
-            20</em>
-    </div>
+
     <!-- Lastname/Breed-->
-    <fieldset>
+    <fieldset *ngIf="isSignin">
         <label for="lname">{{l_usrLName_aRace}} </label>
-        <input id="lname" name="lname" type="text" [(ngModel)]="e_usrLName_aRace" #lname="ngModel" required minlength="2"
-            maxlength="20" placeholder="{{p_usrLName_aRace}} ">
+        <input id="lname" name="lname" type="text" [(ngModel)]="e_usrLName_aRace" #lname="ngModel" required
+            minlength="2" maxlength="20" placeholder="{{p_usrLName_aRace}} ">
+
+        <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
+        <div *ngIf="lname.errors; elseTitle">
+            <em *ngIf="lname.errors?.['required']" class="msgColorAlert">le champ titre est requis</em>
+            <em *ngIf="lname.errors?.['minlength']" class="msgColorAlert">la longueur minimale doit être supérieure à
+                2</em>
+            <em *ngIf="lname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
+                20</em>
+        </div>
     </fieldset>
-    <!-- Vérification et message d'erreur, alerte couleur sur le champ Kitten name -->
-    <div *ngIf="lname.errors; elseTitle">
-        <em *ngIf="lname.errors?.['required']" class="msgColorAlert">le champ titre est requis</em>
-        <em *ngIf="lname.errors?.['minlength']" class="msgColorAlert">la longueur minimale doit être supérieure à 2</em>
-        <em *ngIf="lname.errors?.['maxlength']" class="msgColorAlert">la longueur maximale doit être inférieure à
-            20</em>
-    </div>
 
     <!-- login/mot de passe-->
     <!-- Champ email -->
     <fieldset>
-        <label for="uemail">E-mail </label>
-        <input id="uemail" name="uemail" type="email" [(ngModel)]="e_usrEmail" #email="ngModel" required email>
-    </fieldset>
-    <!-- Vérification et message d'erreur, alerte couleur -->
-    <div *ngIf="email.errors">
-        <span *ngIf="email.errors?.['required']" class="msgColorAlert">Le champ email est requis</span>
-        <span *ngIf="email.errors?.['email']" class="msgColorAlert">L'adresse email doit être valide</span>
-    </div>
+        <label this.isLogin for="uemail">E-mail </label>
+        <input this.isLogin id="uemail" name="uemail" type="email" [(ngModel)]="e_usrEmail" #email="ngModel" required
+            email>
 
+        <!-- Vérification et message d'erreur, alerte couleur -->
+        <div *ngIf="email.errors">
+            <span *ngIf="email.errors?.['required']" class="msgColorAlert">Le champ email est requis</span>
+            <span *ngIf="email.errors?.['email']" class="msgColorAlert">L'adresse email doit être valide</span>
+        </div>
+    </fieldset>
 
     <!-- Champ Mot de passe -->
     <fieldset>
         <label for="upwd">Mot de passe </label>
         <input id="upwd" name="upwd" type="password" [(ngModel)]="e_usrPassword" #password="ngModel" required
             minlength="8">
-    </fieldset>
 
-    <!-- Vérification et message d'erreur, alerte couleur -->
-    <div *ngIf="password.errors">
-        <span *ngIf="password.errors?.['required']" class="msgColorAlert">Le champ mot de passe est requis</span>
-        <span *ngIf="password.errors?.['password']" class="msgColorAlert">Le mot de passe doit être valide</span>
-        <span *ngIf="password.errors?.['minlength']" class="msgColorAlert">La longueur minimale doit être supérieure
-            à
-            8</span>
-    </div>
+
+        <!-- Vérification et message d'erreur, alerte couleur -->
+        <div *ngIf="password.errors">
+            <span *ngIf="password.errors?.['required']" class="msgColorAlert">Le champ mot de passe est requis</span>
+            <span *ngIf="password.errors?.['password']" class="msgColorAlert">Le mot de passe doit être valide</span>
+            <span *ngIf="password.errors?.['minlength']" class="msgColorAlert">La longueur minimale doit être supérieure
+                à
+                8</span>
+        </div>
+    </fieldset>
     <!-- fin login/mot de passe-->
 
     <!-- sex -->
-    <fieldset>
+    <fieldset *ngIf="isSignin">
         <legend>Sexe </legend>
         <label for="male">{{l_usr_aMSex}} </label>
         <input id="male" type="radio" name="radio" value="male" [(ngModel)]="e_usr_aSex" #user_sex="ngModel" />
@@ -82,10 +93,11 @@
     </fieldset>
 
     <!-- Birthday -->
-    <fieldset>
+    <fieldset *ngIf="isSignin">
         <label for="kitten-birthday-date">Date de naissance </label>
         <input id="kitten-birthday-date" name="kitten-birthday" type="date" [(ngModel)]="e_usr_aBirthday"
-            #birthdayDateKitten="ngModel" required><em class="msgColorAlert">{{e_usr_aBirthday | date:'dd-MM-yyyy'}}</em>
+            #birthdayDateKitten="ngModel" required><em class="msgColorAlert">{{e_usr_aBirthday |
+            date:'dd-MM-yyyy'}}</em>
         <!-- Vérification and Message d'erreurs de date -->
         <div *ngIf="birthdayDateKitten.errors, elseDate"><em *ngIf="birthdayDateKitten.errors?.['required']"
                 class="msgColorAlert">Le champ date est requis</em>
@@ -93,10 +105,10 @@
     </fieldset>
 
     <!-- Picture -->
-    <fieldset>
+    <fieldset *ngIf="isSignin">
         <label for="kitten-picture">Photo </label>
-        <input id="kitten-picture" name="kitten-picture" type="text" [(ngModel)]="e_usr_aPicture" #pictureKitten="ngModel"
-            required placeholder="{{p_usr_aPicture}} ">
+        <input id="kitten-picture" name="kitten-picture" type="text" [(ngModel)]="e_usr_aPicture"
+            #pictureKitten="ngModel" required placeholder="{{p_usr_aPicture}} ">
         <!-- Vérification and Message d'erreurs de contact -->
         <div *ngIf="pictureKitten.errors,  elseContact"><em *ngIf="pictureKitten.errors?.['required']"
                 class="msgColorAlert">le champ image est requis</em>

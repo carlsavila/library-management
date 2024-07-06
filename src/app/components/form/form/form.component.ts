@@ -24,46 +24,54 @@ export class FormComponent {
   e_usrPassword: string = "";
   e_usrMobilNumber: string = "";
 
-  // New user object to send to create-user login
+  // New Person object to send to "app-create-user".
   newUser?: Person;
-  // New kitten object to send to add to available kittens
+  // EventEmitter to register user login.
+  @Output() newUserDataToEmit: EventEmitter<Person> = new EventEmitter();
+
+  // New Animal object to send to "app-kittens"
   newKitten?: Animal;
-  // EventEmitter to register user login
-  @Output()
-  newUserDataToEmit: EventEmitter<Person> = new EventEmitter();
-  // EventEmitter to add new kitten login
-  @Output()
-  newKittenDataToEmit: EventEmitter<Animal> = new EventEmitter();
+  // EventEmitter to add new kitten.
+  @Output() newKittenDataToEmit: EventEmitter<Animal> = new EventEmitter();
 
   route: ActivatedRoute = inject(ActivatedRoute);
   //router: Router = inject(Router);
 
   @Input()
   formType?: string;
+
+  // user or kitten form
   isUser!: boolean;
+
+  // signin, signup
+  isSignin: boolean= true;
+  btnSignIn: string = "Connexion";
+  btnSignUp: string = "S'incrire";
+
+  signOnUp() {
+    this.isSignin = !this.isSignin;
+    this.btnSignIn = this.isSignin ? "S'incrire" : "Connexion";
+    this.btnSignUp = this.isSignin ? "Connexion" : "S'incrire";
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(
-      (toto: ParamMap) => {
-        console.log("type de formulaire du lien : ", toto.get("formtype"))
-        this.formType = toto.get("formtype") as string;
-        console.log("type de formulaire copié : ", this.formType)
-        console.log("Is user : ", this.isUser)
+
+      (paramMapResponse: ParamMap) => {
+        // get form type (User, Kitten)
+        this.formType = paramMapResponse.get("formtype") as string;
         this.isUser = ((this.formType == 'utilisateur') ? true : false);
-        console.log("Is user : ", this.isUser)
 
-          // form labels
-  this.l_usrFName_aName = (this.isUser ? "Prénom " : "Nom");
-  this.l_usrLName_aRace = (this.isUser ? "Nom " : " Race");
-  this.l_usr_aMSex = (this.isUser ? "Homme" : "Mâle");
-  this.l_usr_aFSex = (this.isUser ? "Femme " : "Femelle");
+        // form labels
+        this.l_usrFName_aName = (this.isUser ? "Prénom " : "Nom");
+        this.l_usrLName_aRace = (this.isUser ? "Nom " : " Race");
+        this.l_usr_aMSex = (this.isUser ? "Homme" : "Mâle");
+        this.l_usr_aFSex = (this.isUser ? "Femme " : "Femelle");
 
-    // form placeholder
-    this.p_usrFName_aName = (this.isUser ? "votre prénom " : "son nom");
-    this.p_usrLName_aRace = (this.isUser ? "votre nom " : "sa race");
-    this.p_usr_aPicture = "un lien vers" + (this.isUser ? " votre photo " : " sa photo");
-  
-
+        // form placeholder
+        this.p_usrFName_aName = (this.isUser ? "votre prénom " : "son nom");
+        this.p_usrLName_aRace = (this.isUser ? "votre nom " : "sa race");
+        this.p_usr_aPicture = "un lien vers" + (this.isUser ? " votre photo " : " sa photo")
       });
 
   }
