@@ -1,8 +1,8 @@
 import { Component, inject, Input } from '@angular/core';
-import { SlideInterface } from '../../../types/slide.interface';
+import { SlideInterface } from '../types/slide.interface';
 import { NgFor, NgStyle } from '@angular/common';
-import { Animal } from '../../../../../model/animal/animal';
-import { KittensService } from '../../../../../services/kittens.service';
+import { Animal } from '../../../model/animal/animal';
+import { KittensService } from '../../../services/kittens.service';
 
 @Component({
   selector: 'app-imageslider',
