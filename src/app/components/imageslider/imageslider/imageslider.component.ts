@@ -25,8 +25,8 @@ export class ImagesliderComponent {
   currentIndex: number = 0;
 
   getCurrentSlideUrl() {
-    console.log(`Current index url : url(${this.slides[this.currentIndex].url})`)
-    return `url('${this.slides[this.currentIndex].url}')`;
+    console.log(`Current index url : url(${this.getAvailablesKittens()[this.currentIndex].image})`)
+    return `url('${this.getAvailablesKittens()[this.currentIndex].image}')`;
   }
 
   goToPrevious(): void {

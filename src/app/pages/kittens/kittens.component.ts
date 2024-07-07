@@ -21,9 +21,9 @@ export class KittensComponent {
   matchSlideAndKitten() {
     this.kittenService.getAvailableKittens().forEach(kittenItem => {
       console.log("KITTENS MATCH ", kittenItem)
-        const toto = kittenItem.image;
-        const tata = kittenItem.name;
-        this.slide = { url: toto, title: tata};
+        const url = kittenItem.image;
+        const name = kittenItem.name;
+        this.slide = { url: url, title: name};
         this.slides.push(this.slide);
     });
   }
