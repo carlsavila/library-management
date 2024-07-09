@@ -15,7 +15,7 @@ import { SlideInterface } from '../../components/imageslider/types/slide.interfa
 export class KittensComponent {
 
   private kittenService: KittensService = inject(KittensService);
-  slide: SlideInterface = { url: "" , title: '' }
+  slide: SlideInterface = { imageUrl: "" , imageTitle: '' }
   slides: SlideInterface[] = [];
 
   matchSlideAndKitten() {
@@ -23,7 +23,7 @@ export class KittensComponent {
       console.log("KITTENS MATCH ", kittenItem)
         const toto = kittenItem.image;
         const tata = kittenItem.name;
-        this.slide = { url: toto, title: tata};
+        this.slide = { imageUrl: toto, imageTitle: tata};
         this.slides.push(this.slide);
     });
   }

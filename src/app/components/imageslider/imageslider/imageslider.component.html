@@ -3,9 +3,11 @@
         <div (click)="goToPrevious()" class="leftArrow">❰</div>
         <div (click)="goToNext()" class="rightArrow">❱</div>
     </div>
-    <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"></div>
+    <div class="slide" 
+    [style.background-image]="getCurrentSlideUrl()">
+    </div>
     <div class="dotsContainer">
-        <div class="dot" *ngFor="let slide of slides; let slideIndex = index" (click)="goToSlide(slideIndex)">
+        <div class="dot" *ngFor="let kitten of this.kittensImages; let slideIndex = index" (click)="goToSlide(slideIndex)">
             ●
         </div>
     </div>

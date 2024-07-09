@@ -28,6 +28,10 @@ export class KittensService {
     return this.AvailableKittens;
   }
 
+  getAvailableKitten(index: number): Animal {
+    return this.AvailableKittens[index];
+  }
+
   addAvailableKitten(kitten: Animal) {
     this.AvailableKittens.push(kitten);
   }
