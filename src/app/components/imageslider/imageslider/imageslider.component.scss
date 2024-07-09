@@ -33,19 +33,59 @@
 
 .slide {
     width: 100%;
-    height: 100%;
+    height: 80%;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
     border: 1px solid whitesmoke;
 
-    animation: mymove 5s infinite;
-    color: whitesmoke;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    overflow: hidden;
+    background-color: lightblue;
+    
 }
 
-@keyframes mymove {
-    from {        background-color: rgb(152, 215, 238);    }
-    to {        background-color: rgb(177, 222, 238);    }
+.sun {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80%;
+    color: rgb(172, 62, 62);
+
+    background-color: yellow;
+    border-radius: 50%;
+
+    aspect-ratio: 1 / 1;
+
+    /* multiple animations are separated by commas, each animation's parameters are set independently */
+    animation:
+        4s linear 0s infinite alternate rise,
+        24s linear 0s infinite psychedelic;
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(110vh);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes psychedelic {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
 }
 
 
