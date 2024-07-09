@@ -19,17 +19,19 @@ export class ImagesliderComponent {
   // @Input() slides: SlideInterface[] = [];
   kittensImages: string[] = [];
 
-
   getKittensImages() {
-    for (let kitten of this.kittensSvc.getAvailableKittens()) {
+
+    this.kittensSvc.getAvailableKittens().forEach((kitten, index, array) => {
+      console.log("kitten ", kitten, " at index ", index , "of array ", array, " :")
+      console.log("Kittens images ", kitten.image)
       this.kittensImages.push(kitten.image)
-    }
+    })
   }
 
   currentIndex: number = 0;
 
   getCurrentSlideUrl() {
-    console.log(`Current picture index ${this.currentIndex} of URL : ${this.kittensImages[this.currentIndex]}`)
+      console.log(`Current picture index ${this.currentIndex} of URL : ${this.kittensImages[this.currentIndex]}`)
     return `url('${this.kittensImages[this.currentIndex]}')`;
   }
 
@@ -56,6 +58,7 @@ export class ImagesliderComponent {
   }
 
   ngOnInit() {
+    this.kittensSvc.getAvailableKittens()
     this.getKittensImages();
     this.getCurrentSlideUrl();
   }
