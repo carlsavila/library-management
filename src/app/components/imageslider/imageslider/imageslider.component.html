@@ -4,7 +4,7 @@
         <div (click)="goToNext()" class="rightArrow">❱</div>
     </div>
     <div class="slide" 
-    [style.background-image]="getCurrentSlideUrl()" alt="cat">
+    [style.background-image]="getCurrentSlideUrl()">
     </div>
     <div class="dotsContainer">
         <div class="dot" *ngFor="let kitten of this.kittensImages; let slideIndex = index" (click)="goToSlide(slideIndex)">
