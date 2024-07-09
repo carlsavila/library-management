@@ -38,8 +38,17 @@
     background-size: cover;
     background-position: center;
     border: 1px solid whitesmoke;
-    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+
+    animation: mymove 5s infinite;
+    color: whitesmoke;
 }
+
+@keyframes mymove {
+    from {        background-color: rgb(152, 215, 238);    }
+    to {        background-color: rgb(177, 222, 238);    }
+}
+
+
 
 .dotsContainer {
     display: flex;
