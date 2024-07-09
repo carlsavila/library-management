@@ -11,6 +11,12 @@
         <div class="sun">loading...</div>
     </div>
     }
+    @error {
+        <span>Error</span>
+      }
+      @loading(minimum 1s) {
+        <span>Loading...</span>
+      }
 
     <div class="dotsContainer">
         <div class="dot" *ngFor="let kitten of this.kittensImages; let slideIndex = index"
