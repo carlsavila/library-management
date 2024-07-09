@@ -10,11 +10,10 @@ import { ImagesliderComponent } from './components/imageslider/imageslider/image
 export const routes: Routes = [
   {    path: 'accueil', component: HomeComponent, },
   {    path: 'menu',    component: MenuComponent,  },
+  {    path: 'slider',    component: ImagesliderComponent,  },
   {    path: 'chatons',    component: KittensComponent,  },
   {    path: 'connexion/:formtype',    component: SigninupComponent,  },
   {    path: 'contact',    component: ContactComponent,  },
   {    path: 'apropos',    component: AboutComponent,  },
-  {    path: 'slideimage',    component: ImagesliderComponent,  },
-  
   {    path: '', redirectTo: '/accueil', pathMatch: 'full',  },
 ];

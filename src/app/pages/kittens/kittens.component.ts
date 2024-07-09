@@ -15,18 +15,6 @@ import { SlideInterface } from '../../components/imageslider/types/slide.interfa
 export class KittensComponent {
 
   private kittenService: KittensService = inject(KittensService);
-  slide: SlideInterface = { imageUrl: "" , imageTitle: '' }
-  slides: SlideInterface[] = [];
-
-  matchSlideAndKitten() {
-    this.kittenService.getAvailableKittens().forEach(kittenItem => {
-      console.log("KITTENS MATCH ", kittenItem)
-        const toto = kittenItem.image;
-        const tata = kittenItem.name;
-        this.slide = { imageUrl: toto, imageTitle: tata};
-        this.slides.push(this.slide);
-    });
-  }
 
   getServiceKittenJsonKittens(): void {
     this.kittenService.getJsonKittensAndPushToAvailableKittens();
@@ -62,6 +50,5 @@ export class KittensComponent {
   ngOnInit() {
     this.getServiceKittenJsonKittens();
     this.kittenService.getAdoptedKittens();
-    this.matchSlideAndKitten();
   }
 }
