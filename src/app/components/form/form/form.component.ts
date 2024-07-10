@@ -44,14 +44,12 @@ export class FormComponent {
   isUser!: boolean;
 
   // signin, signup
-  isSignin: boolean= true;
-  btnSignIn: string = "Connexion";
-  btnSignUp: string = "S'incrire";
+  isSignin: boolean= false;
+  btnSignIn: string = this.isSignin ? "S'inscrire" : "Connexion";
+  btnSignUp: string = this.isSignin ? "Connexion" : "S'inscrire";
 
   signOnUp() {
     this.isSignin = !this.isSignin;
-    this.btnSignIn = this.isSignin ? "S'incrire" : "Connexion";
-    this.btnSignUp = this.isSignin ? "Connexion" : "S'incrire";
   }
 
   ngOnInit() {
@@ -77,7 +75,7 @@ export class FormComponent {
   }
 
   // On submit, button color changes
-  btnStyle!: string;
+  btnSubmitStyle!: string;
 
   // form labels
   l_usrFName_aName: string = (this.isUser ? "Prénom " : "Nom");

@@ -7,9 +7,15 @@ button[disabled] {
     background-color: var(--bnt-dbled-bg-color);
 }
 
+
 button[type="submit"]:enabled {
     color: var(--bnt-ebled-color);
     background-color: var(--bnt-ebled-bg-color);
+}
+.btnSignInStyle:enabled,
+.btnSignUpStyle:enabled {
+    color: whitesmoke;
+    background-color: royalblue;
 }
 
 .msgColorAlert {
