@@ -14,6 +14,8 @@ export class KittensService {
 
   private http = inject(HttpClient)
 
+  // TO DO :
+  //private hostname: string = <retrieve localhost informations>
 
   private AvailableKittensImages: string[] = [];
 
@@ -29,8 +31,6 @@ export class KittensService {
           console.log("Service JSON Current IMAGE : ", element.image)
         });
 
-        console.log("Service  SLIDER IMAGES array : ", this.AvailableKittensImages)
-        
         this.isRead = true;
       });
     }
@@ -50,6 +50,7 @@ export class KittensService {
 
   addAvailableKitten(kitten: Animal) {
     this.AvailableKittens.push(kitten);
+    this.AvailableKittensImages.push(kitten.image);
   }
 
   removeAvailableKitten(kitten: number) {

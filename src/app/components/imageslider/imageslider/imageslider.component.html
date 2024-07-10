@@ -1,10 +1,10 @@
 <div class="slider">
     <div>
-        <div (click)="goToPrevious()" class="leftArrow">❰</div>
-        <div (click)="goToNext()" class="rightArrow">❱</div>
+        <div (click)="this.goToPrevious()" class="leftArrow">❰</div>
+        <div (click)="this.goToNext()" class="rightArrow">❱</div>
     </div>
-    @defer (when getCurrentSlideUrl()) {
-    <div class="slide" [style.background-image]="getCurrentSlideUrl()">
+    @defer (when this.getCurrentSlideUrl()) {
+    <div class="slide" [style.background-image]="this.getCurrentSlideUrl()">
     </div>}
     @placeholder {
     <div class="slide">
@@ -12,15 +12,15 @@
     </div>
     }
     @error {
-        <span>Error</span>
-      }
-      @loading(minimum 1s) {
-        <span>Loading...</span>
-      }
+    <span>Error</span>
+    }
+    @loading(minimum 1s) {
+    <span>Loading...</span>
+    }
 
     <div class="dotsContainer">
-        <div class="dot" *ngFor="let kitten of this.kittensImages; let slideIndex = index"
-            (click)="goToSlide(slideIndex)">
+        <div class="dot" *ngFor="let kitten of this.getKittensImages(); let slideIndex = index"
+            (click)="this.goToSlide(slideIndex)">
             ●
         </div>
     </div>

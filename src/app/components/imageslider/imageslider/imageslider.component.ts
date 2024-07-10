@@ -1,7 +1,5 @@
 import { Component, inject, Input } from '@angular/core';
-import { SlideInterface } from '../types/slide.interface';
 import { NgFor, NgStyle } from '@angular/common';
-import { Animal } from '../../../model/animal/animal';
 import { KittensService } from '../../../services/kittens.service';
 
 @Component({
@@ -15,15 +13,8 @@ export class ImagesliderComponent {
 
   kittensSvc: KittensService = inject(KittensService);
 
-  // @Input() slides: SlideInterface[] = [];
-  kittensImages: string[] = [];
-
-  getKittensImages() {
-
-    console.log("service KITTENS IMAGES array", this.kittensSvc.getSliderCurrentIndexImage())
-    this.kittensImages = this.kittensSvc.getSliderCurrentIndexImage()
-    console.log("slider KITTENS IMAGES array", this.kittensImages)
-      
+  getKittensImages(): string[] {
+    return this.kittensSvc.getSliderCurrentIndexImage()
   }
 
   currentIndex: number = 0;
@@ -36,14 +27,14 @@ export class ImagesliderComponent {
   goToPrevious(): void {
     const isFirstSlide = this.currentIndex === 0;
     const newIndex = isFirstSlide
-      ? this.kittensImages.length - 1
+      ? this.kittensSvc.getSliderCurrentIndexImage().length - 1
       : this.currentIndex - 1;
 
     this.currentIndex = newIndex;
   }
 
   goToNext(): void {
-    const isLastSlide = this.currentIndex === this.kittensImages.length - 1;
+    const isLastSlide = this.currentIndex === this.kittensSvc.getSliderCurrentIndexImage().length - 1;
     const newIndex = isLastSlide
       ? 0
       : this.currentIndex + 1;

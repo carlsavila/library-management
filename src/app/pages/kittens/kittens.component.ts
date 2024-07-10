@@ -3,7 +3,6 @@ import { KittensService } from '../../services/kittens.service';
 import { Animal } from '../../model/animal/animal';
 import { KittenComponent } from '../../components/kitten/kitten.component';
 import { ImagesliderComponent } from '../../components/imageslider/imageslider/imageslider.component';
-import { SlideInterface } from '../../components/imageslider/types/slide.interface';
 
 @Component({
   selector: 'app-kittens',
