@@ -1,6 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Animal } from '../model/animal/animal';
+import { Location, PlatformLocation } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +15,23 @@ export class KittensService {
 
   private http = inject(HttpClient)
 
+  private location: Location = inject(Location)
+
+  platformLocation: PlatformLocation = inject(PlatformLocation);
+
+  getMyLocation() {
+    console.log("Got location : ", this.location);
+    console.log("Got location : ", this.platformLocation.href);
+
+  }
+
   // TO DO :
   //private hostname: string = <retrieve localhost informations>
 
   private AvailableKittensImages: string[] = [];
 
   getJsonKittensAndPushToAvailableKittens(): void {
+    this.getMyLocation();
     if (!this.isRead) {
       const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.json");
 
