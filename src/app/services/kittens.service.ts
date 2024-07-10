@@ -21,7 +21,7 @@ export class KittensService {
 
   getMyLocation() {
     console.log("Got location : ", this.location);
-    console.log("Got location : ", this.platformLocation.href);
+    console.log("Got location href : ", this.platformLocation.href);
 
   }
 
