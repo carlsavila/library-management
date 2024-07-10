@@ -15,13 +15,30 @@ export class KittensService {
 
   private http = inject(HttpClient)
 
-  private location: Location = inject(Location)
-
   platformLocation: PlatformLocation = inject(PlatformLocation);
+  localhostHref!: string;
 
   getMyLocation() {
-    console.log("Got location : ", this.location);
+
     console.log("Got location href : ", this.platformLocation.href);
+    //https://4j5fsw-4200.csb.app/accueil
+    /* 
+    hostname: "4j5fsw-4200.csb.app"
+    href: "https://4j5fsw-4200.csb.app/accueil"
+    pathname: "/accueil"
+    port: ""
+    protocol: "https:"
+    search: "" */
+    //http://localhost:4200/assets/json/availablekittens.json
+
+    this.localhostHref = this.platformLocation.protocol 
+    + "//" 
+    + this.platformLocation.hostname 
+    + ":" 
+    + this.platformLocation.port 
+    + "/";
+
+    console.log("Got location href : ", this.localhostHref );
 
   }
 
@@ -33,7 +50,7 @@ export class KittensService {
   getJsonKittensAndPushToAvailableKittens(): void {
     this.getMyLocation();
     if (!this.isRead) {
-      const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.json");
+      const jsonKittensObservable = this.http.get<Animal[]>(this.localhostHref + "assets/json/availablekittens.json");
 
       jsonKittensObservable.subscribe((jsonResult) => {
         this.AvailableKittens = jsonResult;
@@ -48,7 +65,7 @@ export class KittensService {
     }
   }
 
-  getSliderCurrentIndexImage (): string[] {
+  getSliderCurrentIndexImage(): string[] {
     return this.AvailableKittensImages;
   }
 
