@@ -19,36 +19,22 @@ export class KittensService {
   localhostHref!: string;
 
   getMyLocation() {
-
-    console.log("Got location href : ", this.platformLocation.href);
-    //https://4j5fsw-4200.csb.app/accueil
-    /* 
-    hostname: "4j5fsw-4200.csb.app"
-    href: "https://4j5fsw-4200.csb.app/accueil"
-    pathname: "/accueil"
-    port: ""
-    protocol: "https:"
-    search: "" */
-    //http://localhost:4200/assets/json/availablekittens.json
-
-    this.localhostHref = this.platformLocation.protocol 
-    + "//" 
-    + this.platformLocation.hostname 
-    + ":" 
-    + this.platformLocation.port 
-    + "/";
-
-    console.log("Got location href : ", this.localhostHref );
-
+    console.log("DEBUG string - PlatformLocation href retrieved : ", this.platformLocation.href);
+    this.localhostHref = this.platformLocation.protocol
+      + "//"
+      + this.platformLocation.hostname
+      + ":"
+      + this.platformLocation.port
+      + "/";
+    console.log("DEBUG string - Local Host Href string built  : ", this.localhostHref);
   }
-
-  // TO DO :
-  //private hostname: string = <retrieve localhost informations>
 
   private AvailableKittensImages: string[] = [];
 
   getJsonKittensAndPushToAvailableKittens(): void {
     this.getMyLocation();
+    console.log("DEBUG string - Local Host Href initizialed and next used with json : ", this.localhostHref);
+    
     if (!this.isRead) {
       const jsonKittensObservable = this.http.get<Animal[]>(this.localhostHref + "assets/json/availablekittens.json");
 
@@ -57,7 +43,7 @@ export class KittensService {
         jsonResult.forEach(element => {
           element.image
           this.AvailableKittensImages.push(element.image)
-          console.log("Service JSON Current IMAGE : ", element.image)
+          console.log("DEBUG string - Service JSON Current IMAGE : ", element.image)
         });
 
         this.isRead = true;
