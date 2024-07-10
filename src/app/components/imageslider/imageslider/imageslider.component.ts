@@ -31,6 +31,9 @@ export class ImagesliderComponent {
   currentIndex: number = 0;
 
   getCurrentSlideUrl() {
+    if (this.currentIndex === 0) {
+      return `url('${this.kittensSvc.getSliderCurrentIndexImage0()}')`;
+    }
       console.log(`Current picture index ${this.currentIndex} of URL : ${this.kittensImages[this.currentIndex]}`)
     return `url('${this.kittensImages[this.currentIndex]}')`;
   }
