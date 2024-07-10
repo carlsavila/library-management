@@ -3,7 +3,6 @@ import { SlideInterface } from '../types/slide.interface';
 import { NgFor, NgStyle } from '@angular/common';
 import { Animal } from '../../../model/animal/animal';
 import { KittensService } from '../../../services/kittens.service';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-imageslider',
@@ -21,21 +20,17 @@ export class ImagesliderComponent {
 
   getKittensImages() {
 
-    this.kittensSvc.getAvailableKittens().forEach((kitten, index, array) => {
-      console.log("kitten ", kitten, " at index ", index , "of array ", array, " :")
-      console.log("Kittens images ", kitten.image)
-      this.kittensImages.push(kitten.image)
-    })
+    console.log("service KITTENS IMAGES array", this.kittensSvc.getSliderCurrentIndexImage())
+    this.kittensImages = this.kittensSvc.getSliderCurrentIndexImage()
+    console.log("slider KITTENS IMAGES array", this.kittensImages)
+      
   }
 
   currentIndex: number = 0;
 
   getCurrentSlideUrl() {
-    if (this.currentIndex === 0) {
-      return `url('${this.kittensSvc.getSliderCurrentIndexImage0()}')`;
-    }
-      console.log(`Current picture index ${this.currentIndex} of URL : ${this.kittensImages[this.currentIndex]}`)
-    return `url('${this.kittensImages[this.currentIndex]}')`;
+      console.log(`Current picture index ${this.currentIndex} of URL : ${this.kittensSvc.getSliderCurrentIndexImage()[this.currentIndex]}`)
+    return `url('${this.kittensSvc.getSliderCurrentIndexImage()[this.currentIndex]}')`;
   }
 
   goToPrevious(): void {

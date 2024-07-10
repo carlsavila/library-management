@@ -14,24 +14,30 @@ export class KittensService {
 
   private http = inject(HttpClient)
 
-  private slideCurrentIndex0Image!: string;
+
+  private AvailableKittensImages: string[] = [];
 
   getJsonKittensAndPushToAvailableKittens(): void {
     if (!this.isRead) {
       const jsonKittensObservable = this.http.get<Animal[]>("assets/json/availablekittens.json");
+
       jsonKittensObservable.subscribe((jsonResult) => {
         this.AvailableKittens = jsonResult;
-        const currentindeximage = this.AvailableKittens[0].image
-        console.log("Service const SLIDER Current index 0 IMAGE : ", currentindeximage)
-        this.slideCurrentIndex0Image = currentindeximage;
-        console.log("Service string SLIDER Current index 0 IMAGE : ", this.slideCurrentIndex0Image)
+        jsonResult.forEach(element => {
+          element.image
+          this.AvailableKittensImages.push(element.image)
+          console.log("Service JSON Current IMAGE : ", element.image)
+        });
+
+        console.log("Service  SLIDER IMAGES array : ", this.AvailableKittensImages)
+        
         this.isRead = true;
       });
     }
   }
 
-  getSliderCurrentIndexImage0 (): string {
-    return this.slideCurrentIndex0Image;
+  getSliderCurrentIndexImage (): string[] {
+    return this.AvailableKittensImages;
   }
 
   getAvailableKittens(): Animal[] {
