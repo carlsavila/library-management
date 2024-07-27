@@ -1,5 +1,7 @@
 # Angular17Project
+Kittens library front-end
 [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+
 
 ## Mockup sketch
 Excalidraw Mockup sketch
