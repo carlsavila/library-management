@@ -1,6 +1,5 @@
 # Kittens library
-
-## Front-End Angular 17 Project
+Front-End Angular 17 Project
 [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
 ## Mockup sketch
